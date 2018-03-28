@@ -1,7 +1,5 @@
 ﻿# team-profile
 
-标签（空格分隔）： 未分类
-
 ---
 
 **团队名称：Create and Time (CAT)**
