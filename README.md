@@ -16,3 +16,5 @@ Romance cloud catering service platform
 | 15331443 | 朱文豪  |  技术   |     后端工程师，数据库维护     | 下午班 |
 | 15331049 | 成文超  | 产品/技术 |        测试工程师        | 上午班 |
 
+**团队作业**
+* 1、[About（项目规划）](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/project%20planning.md)
