@@ -23,7 +23,7 @@ Romance cloud catering service platform
 * 4、[Vision（项目愿景）]
 * 5、[Product Backlog （产品特性）]
 * 6、Requirement specification（需求规格说明）
- 6.1、[Usecase Diagram](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
- 6.2、[Use Cases（用例）](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
- 6.3、[Domian Model](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_domian_model.md)
+  * 6.1、[Usecase Diagram](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
+  * 6.2、[Use Cases（用例）](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
+  * 6.3、[Domian Model](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_domian_model.md)
  
