@@ -27,14 +27,14 @@ Romance cloud catering service platform
   * 6.2、[Use Cases（用例）](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
   * 6.3、[Domian Model](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_domian_model.md)
   * 6.4 State Model（状态模型）
-  * 6.5 System Sequence Diagram（功能模型）
+  * 6.5 System Sequence Diagram(功能模型)
 * 7、Design（设计）
   * 7.1、UI design
-   * XX 用例 UI设计
+    * XX 用例 UI设计
   * 7.2 Database design
-   * 7.2.1 用户及权限系统数据库设计
-   * 7.2.2 XX子系统数据课设计
-   * 7.2.x 第三方数据评审结果
+    * 7.2.1 用户及权限系统数据库设计
+    * 7.2.2 XX子系统数据课设计
+    * 7.2.x 第三方数据评审结果
   * 7.3 API 设计
 * 8、生产规范与指南
   * 8.1 XX 代码规范
