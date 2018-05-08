@@ -28,7 +28,7 @@ Romance cloud catering service platform
   * 6.3、[Domian Model](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_domian_model.md)
 * 7、Design（设计）
   * 7.1、UI design
-    * XX 用例 UI设计 <nobr />
+    * XX 用例 UI设计
   * 7.2 Database design
     * 7.2.1 用户及权限系统数据库设计
     * 7.2.2 XX子系统数据课设计
