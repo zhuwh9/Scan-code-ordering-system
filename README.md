@@ -23,19 +23,19 @@ Romance cloud catering service platform
 * 4、[Vision（项目愿景）]
 * 5、[Product Backlog （产品特性）]
 * 6、Requirement specification（需求规格说明）
- * 6.1、[Usecase Diagram](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
- * 6.2、[Use Cases（用例）](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
- * 6.3、[Domian Model](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_domian_model.md)
+  * 6.1、[Usecase Diagram](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
+  * 6.2、[Use Cases（用例）](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
+  * 6.3、[Domian Model](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_domian_model.md)
 * 7、Design（设计）
- * 7.1、UI design
-  * XX 用例 UI设计
- * 7.2 Database design
-  * 7.2.1 用户及权限系统数据库设计
-  * 7.2.2 XX子系统数据课设计
-  * 7.2.x 第三方数据评审结果
+  * 7.1、UI design
+    * XX 用例 UI设计
+  * 7.2 Database design
+    * 7.2.1 用户及权限系统数据库设计
+    * 7.2.2 XX子系统数据课设计
+    * 7.2.x 第三方数据评审结果
 * 8、生产规范与指南
- * XX 代码规范
+  * XX 代码规范
 * X1 meet_recording
- * [inception meeting (18/03/20)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/meeting-record.md)
+  * [inception meeting (18/03/20)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/meeting-record.md)
 * X2 Tech/Work Report
- * 学号-title
+  * 学号-title
