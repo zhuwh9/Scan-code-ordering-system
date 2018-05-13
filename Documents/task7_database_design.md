@@ -1,0 +1,1 @@
+![](https://raw.githubusercontent.com/SAAD-CAT/Scan-code-ordering-system/master/Assets/Images/db_design.png)
