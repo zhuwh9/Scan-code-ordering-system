@@ -6,11 +6,10 @@ var connect = require('connect');
 var mongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
 
-require('./models/user_model.js');
-require('./models/film_model.js');
-require('./models/ticket_model.js');
-require('./models/comment_model.js');
-require('./models/theater_model.js');
+require('./models/food_model.js');
+require('./models/order_model.js');
+require('./models/restaurant_model.js');
+require('./models/table_model.js');
 
 var conn = mongoose.connect('mongodb://localhost:27017/mydatabase');
 //console.log(conn.connections[0].collections);

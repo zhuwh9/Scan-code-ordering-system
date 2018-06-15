@@ -13,6 +13,7 @@ module.exports = function(app) {
 
 
 	/*********************************************************************/
+	//user's behavior
 	app.get('/', function(req, res) {
 		console.log('request to route /');
 		res.render('wecome to restuarant!');
@@ -23,11 +24,13 @@ module.exports = function(app) {
 	app.post('/order', system.generateOrder);
 		//send order to restaurant
 		//...
+	//end user's behavior
+	/*********************************************************************/
 
 
 
-
-
+	/*********************************************************************/
+	//restaurant's behavior
 	app.get('/merchantRegister', function(req, res) {
 		//render register page
 		//...
@@ -50,12 +53,7 @@ module.exports = function(app) {
 		//...
 	});
 
-
-
-
-	
-
-
+	//end restaurant's behavior
 	/*********************************************************************/
 
 
