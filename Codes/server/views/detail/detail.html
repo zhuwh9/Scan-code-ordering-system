@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MovieDetail</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/common/login and register part.css">
+    <link rel="stylesheet" type="text/css" href="/static/detail/play-video.css">
+    <link rel="stylesheet" type="text/css" href="/static/common/top-bar.css">
+    <link rel="stylesheet" type="text/css" href="/static/detail/detail.css">
+    <script type="text/javascript" src="/static/common/jquery-latest.js"></script>
+    <script type="text/javascript" src="/static/common/login and register part.js"></script>
+    <script type="text/javascript" src="/static/detail/play-video.js"></script>
+    <script type="text/javascript" src="/static/detail/detail.js"></script>
+</head>
+
+<body>
+    <div id="play-video">
+        <p align="right">×</p>
+        <!-- 这里会被插入视频 -->
+    </div>
+    <div id="login-register">
+        <div id="register-part">
+            <h1>用户注册<span class="close">×</span></h1>
+            <div>
+                <input type="text" name="phonenum" placeholder="请输入11位手机号码">
+                <span id="error-num" class="error">请输入11位手机号码</span>
+                <input type="password" name="password" placeholder="请输入6-20位密码，必须包含字母和数字">
+                <i id="eye" class="see-able"></i>
+                <span id="error-pwd" class="error" >请输入6-20位密码，必须包含字母和数字</span>
+                <input type="text" name="check-word" placeholder="请输入验证码">
+                <button type="button" id="get-check-word">获取验证码</button>
+                <span id="error-check" class="error">验证码错误，请重新输入</span>
+                <input type="checkbox" name="agree">
+                <span>已阅读并同意<a href="http://www.baidu.com">用户注册协议</a></span>
+                <a id="login">已有账号，去登录</a>
+                <button type="button">注册</button>
+            </div>
+        </div>
+        <div id="avatar-part">
+            <h1>个人信息<span class="close">×</span></h1>
+            <div>
+                <img src="/static/movielist/res/icon.png" />
+            </div>
+            <p>手机号：<span>12345678900</span></p>
+            <button id="logout">退出登录</button>
+            <button id="select-file">选择文件</button>
+            <input type="file" accept="image/*">
+            <button id="upload">上传</button>
+        </div>
+    </div>
+    <div id="top-bar">
+        <div>
+            <div class="top-bar-link">
+                <a href="/">首页</a>
+            </div>
+            <div class="top-bar-link" id="selected">
+                <a href="">电影</a>
+            </div>
+            <div class="top-bar-link">
+                <!-- TODO: 修改这里的地址 -->
+                <a href="https://www.baidu.com">影院</a>
+            </div>
+            <img id="head-icon" src="/static/movielist/res/icon.png" title="头像">
+            <div id="search-bar">
+                <input id="search-bar-input" type="text" name="keyword" placeholder="输入电影名称">
+                <a href="http://www.baidu.com"><img src="/static/movielist/res/tmp.png" id="search-bar-img"></a>
+            </div>
+        </div>
+    </div>
+    <div id="background-poster"></div>
+    <img src="/static/detail/res/bg-shade.png">
+    <table id="message-part">
+        <tr>
+            <td>
+                <div id="video-poster">
+                    <img src="/static/detail/res/poster.webp">
+                    <button id="play" />
+                </div>
+            </td>
+            <td>
+                <div id="message">
+                    <p id="movie-name">你的名字。</p>
+                    <p id="introduce">简介：<span>在远离大都会的小山村，住着巫女世家出身的高中女孩宫水三叶（上白石萌音 配音）。校园和家庭的原因本就让她充满烦恼，而近一段时间发生的奇怪事件，又让三叶摸不清头脑。不知从何时起，三叶在梦中就会变成一个住在东京的高中男孩。那里有陌生的同学和朋友，有亲切的前辈和繁华的街道，一切都是如此诱人而真实。另一方面，住在东京的高中男孩立花泷（神木隆之介 配音）则总在梦里来到陌生的小山村，以女孩子的身份过着全新的生活。</span></p>
+                    <p id="movie-language"><span>日本（日语）</span></p>
+                    <p id="directior">上映时间：<span>新海诚</span></p>
+                    <p id="actors">评分：<span></span></p>
+                    <!--<p id="producer">出品：<span>没查到</span></p>-->
+                </div>
+            </td>
+            <td id="mark-part">
+                <p id="watched">您的评分（你已观看此电影）：</p>
+                <div id="star-bar">
+                    <div id="star-bar-bottom"></div>
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <img src="/static/detail/res/star.png">
+                    <div id="star-bar-top"></div>
+                </div>
+                <p id="score"><span id="your-score">5.0</span>/10</p>
+                <div id="comment-detail">
+                    <textarea></textarea>
+                </div>
+                <div id="release-comment">
+                    <button>发布</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="cinema-comment">
+        <div id="choices">
+            <!--<p>在映影院</p>-->
+            <p class="cinema-comment-selected">影评</p>
+        </div>
+        <!--<div id="cinema-part">-->
+            <!--<div id="cinema-head">-->
+                <!--<div id="cinema-location">-->
+                    <!--<p>位置</p>-->
+                    <!--<select id="province">-->
+                        <!--<option value="" selected>-省份-</option>-->
+                        <!--<option value="guangdong">广东省</option>-->
+                    <!--</select>-->
+                    <!--<select id="city">-->
+                        <!--<option value="" selected>-城市-</option>-->
+                        <!--<option value="guangzhou">广州市</option>-->
+                    <!--</select>-->
+                    <!--<select id="area">-->
+                        <!--<option value="" selected>-行政区-</option>-->
+                        <!--<option value="daxuecheng">大学城</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<table id="cinema-choices">-->
+                    <!--<tr>-->
+                        <!--<td>-->
+                            <!--<p>影院</p>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<ul>-->
+                                <!--<li>百度糯米</li>-->
+                                <!--<li>百度糯米</li>-->
+                                <!--<li>百度糯米</li>-->
+                                <!--<li>百度糯米</li>-->
+                                <!--<li>百度糯米</li>-->
+                                <!--<li>百度糯米</li>-->
+                            <!--</ul>-->
+                        <!--</td>-->
+                        <!--<td><a href="">更多>></a></td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; 一个 tr 对应一个影院 &ndash;&gt;-->
+            <!--<table id="cinema-message">-->
+                <!--<tr>-->
+                    <!--<td>-->
+                        <!--<img src="/static/detail/res/cinema (1).png">-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<div>-->
+                            <!--<p>影院名字</p>-->
+                            <!--<p>影院信息</p>-->
+                        <!--</div>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<button>查询订票</button>-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>-->
+                        <!--<img src="/static/detail/res/cinema (1).png">-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<div>-->
+                            <!--<p>影院名字</p>-->
+                            <!--<p>影院信息</p>-->
+                        <!--</div>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<button>查询订票</button>-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>-->
+                        <!--<img src="/static/detail/res/cinema (1).png">-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<div>-->
+                            <!--<p>影院名字</p>-->
+                            <!--<p>影院信息</p>-->
+                        <!--</div>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<button>查询订票</button>-->
+                    <!--</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+            <!--<div id="more-cinema">-->
+                <!--<a href="">显示更多影院</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div id="comment-part">
+            <ul>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

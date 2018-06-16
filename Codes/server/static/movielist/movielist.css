@@ -1,0 +1,133 @@
+body {
+    margin: auto;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    font-size: 0px;
+    background: white;
+    min-width: 1000px;
+    width: 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+div {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+/*列表部分*/
+
+ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    position: relative;
+    width: 100%;
+    padding: 0 0 30% 0;
+    margin: 0;
+    height: 0;
+    border-bottom: 2px solid #c30d28;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+li p {
+    padding: 0;
+    margin: 0;
+}
+
+.message {
+    position: absolute;
+    left: 10%;
+    margin-top: 7%;
+    max-width: 600px;
+}
+
+.name {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 40px;
+    max-width: 600px;
+    max-height: 160px;
+    margin-right: 10px;
+    color: white;
+}
+
+.score {
+    display: inline-block;
+    font-size: 25px;
+    color: #e3c660;
+}
+
+.introduce,
+.simple-message,
+.director,
+.actors,
+.producer {
+    font-size: 17px;
+    color: white;
+    margin-top: 10px;
+}
+
+.simple-message {
+    font-size: 17px;
+    color: white;
+}
+
+.video {
+    position: absolute;
+    right: 10%;
+    margin-top: 7%;
+    width: 300px;
+    height: 200px;
+}
+
+.play {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 100px;
+    top: 50px;
+    border: 0;
+    padding: 0;
+    background-image: url(res/play.png);
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.video button:hover {
+    cursor: pointer;
+}
+
+.check-pocket,
+.detail {
+    position: absolute;
+    bottom: -45px;
+    width: 130px;
+    height: 35px;
+    font-size: 15px;
+    color: white;
+    border: 0;
+}
+
+.check-pocket {
+    left: 0px;
+    background-color: #af2238;
+}
+
+.detail {
+    right: 0px;
+    background-color: #898989;
+}

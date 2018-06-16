@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thx666OBro</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/home/home.css">
+    <link rel="stylesheet" type="text/css" href="/static/common/login and register part.css">
+    <link rel="stylesheet" type="text/css" href="/static/common/top-bar.css">
+    <script type="text/javascript" src="/static/common/jquery-latest.js"></script>
+    <script type="text/javascript" src="/static/common/login and register part.js"></script>
+    <script type="text/javascript" src="/static/home/home.js"></script>
+</head>
+
+<body>
+    <div id="login-register">
+        <div id="register-part">
+            <h1>用户注册<span class="close">×</span></h1>
+            <div>
+                <input type="text" name="phonenum" placeholder="请输入11位手机号码">
+                <span id="error-num" class="error">请输入11位手机号码</span>
+                <input type="password" name="password" placeholder="请输入6-20位密码，必须包含字母和数字">
+                <i id="eye" class="see-able"></i>
+                <span id="error-pwd" class="error" >请输入6-20位密码，必须包含字母和数字</span>
+                <input type="text" name="check-word" placeholder="请输入验证码">
+                <button type="button" id="get-check-word">获取验证码</button>
+                <span id="error-check" class="error">验证码错误，请重新输入</span>
+                <input type="checkbox" name="agree">
+                <span>已阅读并同意<a href="http://www.baidu.com">用户注册协议</a></span>
+                <a id="login">已有账号，去登录</a>
+                <button type="button">注册</button>
+            </div>
+        </div>
+        <div id="avatar-part">
+            <h1>个人信息<span class="close">×</span></h1>
+            <div>
+                <img src="/static/home/res/icon.png" />
+            </div>
+            <p>手机号：<span>13800138000</span></p>
+            <button id="logout">退出登录</button>
+            <button id="select-file">选择文件</button>
+            <input type="file" accept="image/*">
+            <button id="upload">上传</button>
+        </div>
+    </div>
+    <div id="top-bar">
+        <div>
+            <div class="top-bar-link" id="selected">
+                <a href="">首页</a>
+            </div>
+            <div class="top-bar-link">
+                <!-- TODO: 修改这里的地址 -->
+                <a href="/movielist">电影</a>
+            </div>
+            <div class="top-bar-link">
+                <!-- TODO: 修改这里的地址 -->
+                <a href="https://www.baidu.com">影院</a>
+            </div>
+            <img id="head-icon" src="/static/home/res/icon.png" title="头像">
+            <div id="search-bar">
+                <input id="search-bar-input" type="text" name="keyword" placeholder="输入电影名称">
+                <a href="http://www.baidu.com"><img src="/static/home/res/tmp.png" id="search-bar-img"></a>
+            </div>
+        </div>
+    </div>
+    <div id="video-part">
+        <div id="video-part-video">
+            <embed src='http://player.youku.com/player.php/sid/XMjY4MTUyMTc0MA==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+        </div>
+        <div id="video-part-poster" class="show" title="点击播放预告片">
+            <div id="big-poster-img" style="background-image: url(/static/films/images/showing/new_mummy.png)"></div>
+        </div>
+        <div id="video-part-message" class="show" title="点击播放预告片">
+            <p>新木乃伊</p>
+            <p>导演：<span id="director">艾里克斯·库兹曼</span></p>
+            <p>演员：<span id="actors">汤姆·克鲁斯 索菲亚·波多拉 罗素·克劳 安娜贝拉·沃丽丝 杰克·约翰逊</span></p>
+            <p><span id="type">美国 奇幻 /剧情 /动作</span></p>
+        </div>
+    </div>
+    <div id="twolist">
+        <div id="showing-list" class="list-part">
+            <h1>正在上映</h1>
+            <ul class="poster-part">
+            </ul>
+            <div class="left-button"></div>
+            <div class="right-button"></div>
+        </div>
+        <div id="show-soon-list" class="list-part">
+            <h1>即将上映</h1>
+            <ul class="poster-part">
+            </ul>
+            <div class="left-button"></div>
+            <div class="right-button"></div>
+        </div>
+    </div>
+</body>
+
+</html>
