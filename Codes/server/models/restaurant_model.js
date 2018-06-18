@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var RestaurantSchema = new Schema({
-	restaurant_id: {type: String, unique: true}
+	restaurant_id: {type: String, unique: true},
 	restaurant_name: String,
 	password_hash: {type: String, required: true},
 	//telnumber: {type: String, default: ""},

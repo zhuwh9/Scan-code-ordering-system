@@ -1,12 +1,14 @@
 var express = require('express');
 
 module.exports = function(app) {
-	var user = require('../controllers/user_controller.js');
-	var film = require('../controllers/film_controller.js');
-	var comment = require('../controllers/comment_controller.js');
-	var sms = require('../controllers/ihuyi.js');
-	var send_message = new sms();
+	//var user = require('../controllers/user_controller.js');
+	//var film = require('../controllers/film_controller.js');
+	//var comment = require('../controllers/comment_controller.js');
+	//var sms = require('../controllers/ihuyi.js');
+	//var send_message = new sms();
 
+	var restaurant = require('../controllers/restaurant_controller.js');
+	var system = require('../controllers/system_controller.js');
 
 	app.use('/static', express.static('./static'));
 	
