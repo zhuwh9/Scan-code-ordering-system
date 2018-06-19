@@ -1,20 +1,27 @@
+var crypto = require('crypto');
 var mongoose = require('mongoose');
 var Restaurant = mongoose.model('Restaurant');
 var Food = mongoose.model('Food');
 var Order = mongoose.model('Order');
 
+function hashPW(password) {
+	return crypto.createHash('sha256').update(password)
+				.digest('base64').toString();
+}
 
 exports.generateOrder = function(req, res) {
-	//	generate a order
-	//	store order to db
-	//	send order to restaurant
-	//var order_rasturant = req.body.order_rasturant;
-	var order_num = "123456";
+	var rastaurant_id = req.body.rastaurant_id;
 	var table_num = req.body.table_num;
 	var order_time = req.body.order_time;
+	var order_num = hashPW(rastaurant_id + table_num + order_time);
 	var menu = req.body.menu;
 	var total_num = req.body.total_num;
 	var total_price = req.body.total_price;
+
+	var newDate = new Date();
+	newDate.setTime(order_time * 1000);
+	console.log('time is:');
+	console.log(newDate.toDateString());
 
 	//add order to db
 	var order = new Order({order_num: order_num});
@@ -42,9 +49,6 @@ exports.generateOrder = function(req, res) {
 				};
 				res.status(200).json(data);
 				res.end();
-
-				//send order to resturant
-				//...
 			}
 		});
 }

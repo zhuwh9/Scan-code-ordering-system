@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var OrderSchema = new Schema({
+	order_num: {type: String, unique:true},
 	rasturant_id: String,
-	order_num: String,
 	table_num: String,
 	order_time: String,
 	menu: String,

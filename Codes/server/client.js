@@ -1,33 +1,50 @@
 var http = require('http');
 var jQuery = require('jquery');
 
+//	to add food
+// 	var data = JSON.stringify({
+// 	rastaurant_id: '18819253726',
+// 	food_name: 'chicken',
+// 	food_type: 'meat',
+// 	food_price: '$100',
+// 	food_description: 'a delicious chicken meat',
+// 	picture_url: 'chicken'
+// });
+
+//	to get food list
+// 	var data = JSON.stringify({
+// 	rastaurant_id: '18819253726'
+// });
+
+//	to delete food
+// 	var data = JSON.stringify({
+// 	rastaurant_id: '18819253726',
+// 	food_name: 'chicken'
+// });
+
+//	to take a order
+	var time = new Date().getTime();
+	var data = JSON.stringify({
+	rastaurant_id: '18819253726',
+	table_num: '1',
+	order_time: time,
+	menu: 'chicken',
+	total_num: '2',
+	total_price: '$30'
+ });
+
 var options = {
-	host: '127.0.0.1',
-	path: '/login',
+	host: '192.168.59.159',
+	path: '/order',
 	port: '5000',
 	method: 'POST',
+	headers: {
+        'Content-Type':'application/json',
+        'Content-Length':data.length
+    }
 };
 
-var data = {
-	username: '18819253726',
-	password: '123456'
-};
-
-/*var post_url = 'http://127.0.0.1:5000/login';
-
-jQuery.post(post_url, {
-            username: '18819253726',
-            password: '123456',
-        },
-        function(data, textStatus, xhr) {
-            if (textStatus == "true") { // 登录或注册成功
-                console.log(data);
-            }
-        }
-    );*/
-
-data = JSON.stringify(data);
-//console.log(data);
+console.log(data);
 
 var req = http.request(options, function(response){
 	var responsedata = '';
