@@ -1,7 +1,7 @@
 var http = require('http');
 var jQuery = require('jquery');
 
-//	to add food
+	// to add food
 // 	var data = JSON.stringify({
 // 	rastaurant_id: '18819253726',
 // 	food_name: 'chicken',
@@ -23,19 +23,28 @@ var jQuery = require('jquery');
 // });
 
 //	to take a order
-	var time = new Date().getTime();
+	// var time = new Date();
+	// var data = JSON.stringify({
+	// rastaurant_id: '18819253726',
+	// table_num: '1',
+	// order_time: time,
+	// menu: 'chicken',
+	// total_num: '2',
+	// total_price: '$30'
+ // });
+
+	//to receive order
+	var time = new Date();
+	console.log("time is " + time);
 	var data = JSON.stringify({
 	rastaurant_id: '18819253726',
-	table_num: '1',
-	order_time: time,
-	menu: 'chicken',
-	total_num: '2',
-	total_price: '$30'
+	time: time
  });
 
 var options = {
 	host: '192.168.59.159',
-	path: '/order',
+	path: '/receiveOrder',
+	//path: '/order',
 	port: '5000',
 	method: 'POST',
 	headers: {
@@ -44,6 +53,7 @@ var options = {
     }
 };
 
+console.log("the post data is:");
 console.log(data);
 
 var req = http.request(options, function(response){
@@ -57,5 +67,7 @@ var req = http.request(options, function(response){
 
 	});
 });
+
+console.log("receive data is:");
 req.write(data);
 req.end();

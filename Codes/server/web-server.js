@@ -34,6 +34,6 @@ app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
 
 require('./routers/auth_router')(app);
-app.listen(50);
+app.listen(5000);
 
 console.log("the web-server is running on 'localhost:5000'");
