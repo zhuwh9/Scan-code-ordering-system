@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/create_menu.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div>
+			<ul class="mui-table-view">
+			    <form class="mui-input-group">
+				    <div class="mui-input-row">
+				        <label>菜名</label>
+				    	<input type="text" class="mui-input-clear create-menu-name" placeholder="请输入菜名">
+				    </div>
+				    <div class="mui-input-row">
+				        <label>单价</label>
+				        <input type="text" class="mui-input-clear create-menu-price" placeholder="请输入单价">
+				    </div>
+				    <div class="mui-input-row">
+				        <label>描述</label>
+				        <input type="text" class="mui-input-clear create-menu-description" placeholder="请输入菜品描述">
+				    </div>
+				    <div class="mui-input-row">
+				        <label>类型</label>
+				        <input type="text" class="mui-input-clear create-menu-type" placeholder="请输入类型">
+				    </div>
+				    <div class="mui-input-row">
+				    	<label>图片</label>
+				    	<button type="button" id="upload_img">上传图片</button>
+				    	
+				    </div>
+				    <div class="mui-button-row">
+				        <button type="button" class="mui-btn mui-btn-primary confirm" >确认</button>
+				        <button type="button" class="mui-btn mui-btn-danger cancel" >取消</button>
+				    </div>
+				</form>
+				<img src="" id="userImg"/>
+			</ul>
+		</div>
+	</body>
+</html>

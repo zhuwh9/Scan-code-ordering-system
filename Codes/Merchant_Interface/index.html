@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/iconfont.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <script src="js/scos.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<!--"智慧餐厅"图标-->
+		<h1 class="mui-title">
+			<img src="imgs/title.jpg"/>
+		</h1>
+		<!--消息图标-->
+		<div class="messages_img"><img src="imgs/messages.jpg"/> </div>
+		<div class="mui-content">
+		    <div class="mui-slider">
+		    	<div class="mui-slider-group" id="slider-img">
+		    		<!--<div class="mui-slider-item">
+		    			<a href="#">
+		    				<img src="imgs/slider_img1.jpg"/>
+		    				<p class="mui-slider-title">为您的餐厅定制 专业的点餐系统</p>
+		    			</a>
+		    		</div>
+		    		<div class="mui-slider-item">
+		    			<a href="#">
+		    				<img src="imgs/slider_img2.jpg">
+		    				<p class="mui-slider-title">用户指南--商家版</p>
+		    			</a>
+		    		</div>!-->
+		    	</div>
+		    	<div class="mui-slider-indicator">
+		    		<!--<div class="mui-slider-indicator" id="slider-indicator">
+		    			<div class="mui-indicator mui-active"></div>
+		    			<div class="mui-indicator"></div>
+		    		</div>!-->
+		    	</div>
+		    </div>
+		    
+		    <div class="tab-div new-order">
+		    	<div class="order">
+		    		<h1 class="order-title">
+		    			<span class="table-num"> 10</span>
+		    			<span>号桌 </span>
+		    			<span class="order-state">已下单</span>
+		    		</h1>
+		    		<h3>订单号：<span class="order-seq-num">1234560001</span></h3>
+		    		<h3>下单时间：<span class="order-time">2018-6-18-12:00</span></h3>
+		    		<hr />
+		    		<div class="order-content">
+		    			<h2 class="menu-line"><span class="menu-name">柳州螺蛳粉</span><span class="menu-price">￥13</span><span class="menu-num">x 2</span></h2>
+		    			<h2 class="menu-line"><span class="menu-name">过桥米线</span><span class="menu-price">￥11</span><span class="menu-num">x 1</span></h2>
+		    			<h2 class="menu-total"> <span>共</span><span class="total-num">3</span><span>件商品，实付￥</span><span class="total-price">37</span></h2>
+		    			<h2><button class="accept-order">确认</button></h2>
+		    		</div>
+		    		<hr />
+		    	</div>
+		    	<div class="order">
+		    		<h1 class="order-title">
+		    			<span class="table-num"> 7</span>
+		    			<span>号桌 </span>
+		    			<span class="order-state">已下单</span>
+		    		</h1>
+		    		<h3>订单号：<span class="order-seq-num">1234560002</span></h3>
+		    		<h3>下单时间：<span class="order-time">2018-6-18-13:00</span></h3>
+		    		<hr />
+		    		<div class="order-content">
+		    			<h2 class="menu-line"><span class="menu-name">柳州螺蛳粉</span><span class="menu-price">￥13</span><span class="menu-num">x 2</span></h2>
+		    			<h2 class="menu-line"><span class="menu-name">过桥米线</span><span class="menu-price">￥11</span><span class="menu-num">x 1</span></h2>
+		    			<h2 class="menu-total"> <span>共</span><span class="total-num">3</span><span>件商品，实付￥</span><span class="total-price">37</span></h2>
+		    			<h2><button class="accept-order">确认</button></h2>
+		    		</div>
+		    		<hr />
+		    	</div>
+		    </div>
+		    <div class="tab-div finished-order"></div>
+		    <div class="tab-div manage-store">
+		    	<ul class="mui-table-view"> 
+		    		<span class="mui-switch mui-switch-blue mui-active type-switch">
+						<span class="mui-switch-handle"></span>
+					</span>
+			        <li class="mui-table-view-cell mui-collapse">
+			            <a class="mui-navigate-right menu-type" href="#">面食</a>
+			            <div class="mui-collapse-content">
+			            	<button type="button" class="mui-btn mui-btn-success">添加菜品</button>
+			            	<hr />
+			                <div class="detailed-menu">
+			                	<span class="detailed-menu-name">螺蛳粉</span>
+				                <!-- 开关打开状态，多了一个.mui-active类 -->
+								<span class="mui-switch mui-active menu-switch">
+								  <span class="mui-switch-handle"></span>
+								</span>
+								<hr />
+							</div>
+							<div class="detailed-menu">
+			                	<span class="detailed-menu-name">肥肠面</span>
+				                <!-- 开关打开状态，多了一个.mui-active类 -->
+								<span class="mui-switch mui-active menu-switch">
+								  <span class="mui-switch-handle"></span>
+								</span>
+								<hr />
+							</div>
+			            </div>
+			        </li>
+			    </ul>
+			    
+			    <ul class="mui-table-view"> 
+			    	<span class="mui-switch mui-switch-blue mui-active type-switch">
+						<span class="mui-switch-handle"></span>
+					</span>
+			        <li class="mui-table-view-cell mui-collapse">
+			            <a class="mui-navigate-right menu-type" href="#">饭</a>
+			            <div class="mui-collapse-content">
+			            	<button type="button" class="mui-btn mui-btn-success">添加菜品</button>
+			            	<hr />
+			                <div class="detailed-menu">
+			                	<span class="detailed-menu-name">蛋炒饭</span>
+								<span class="mui-switch mui-active menu-switch">
+								  <span class="mui-switch-handle"></span>
+								</span>
+								<hr />
+							</div>
+							<div class="detailed-menu">
+			                	<span class="detailed-menu-name">咖喱饭</span>
+				                <!-- 开关打开状态，多了一个.mui-active类 -->
+								<span class="mui-switch mui-active menu-switch">
+								  <span class="mui-switch-handle"></span>
+								</span>
+								<hr />
+							</div>
+			            </div>
+			        </li>
+			    </ul>
+			    <button type="button" class="mui-btn mui-btn-primary create-type">创建分类</button>
+		    </div>
+		    <div class="tab-div history"></div>
+		    <nav class="mui-bar mui-bar-tab">
+		    	<a class="mui-tab-item mui-active">
+		    		<span class="mui-icon iconfont icon-shouye2 "></span>
+		    		<span class="mui-tab-label">新的订单</span>
+		    	</a>
+		    	<a class="mui-tab-item mui-active">
+		    		<span class="mui-icon iconfont icon-icon"></span>
+		    		<span class="mui-tab-label">已处理订单</span>
+		    	</a>
+		    	<a class="mui-tab-item mui-active">
+		    		<span class="mui-icon iconfont icon-shouye"></span>
+		    		<span class="mui-tab-label">菜单管理</span>
+		    	</a>
+		    	<a class="mui-tab-item mui-active">
+		    		<span class="mui-icon iconfont icon-shouye1"></span>
+		    		<span class="mui-tab-label">历史订单</span>
+		    	</a>
+		    </nav>
+		</div>
+	</header>
+</body>
+</html>
