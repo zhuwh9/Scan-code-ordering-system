@@ -96,6 +96,7 @@ var options = {
         'Content-Length':data.length
     }
 };
+
 var req = http.request(options, function(response){
 	var responsedata = '';
 	response.on('data', function(chunk){
@@ -106,9 +107,11 @@ var req = http.request(options, function(response){
 		console.log(responsedata);
 	});
 });
+
 req.on('error', function(e) {
 	console.log('Error is : ' + e.message);
 });
+
 req.write(data);
 req.end();
 

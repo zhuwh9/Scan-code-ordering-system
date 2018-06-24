@@ -1,0 +1,20 @@
+
+@font-face {font-family: "iconfont";
+  src: url(../fonts/iconfont.ttf) format('truetype');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouye:before { content: "\e61a"; }
+
+.icon-shouye1:before { content: "\e61c"; }
+
+.icon-shouye2:before { content: "\e626"; }
+
+.icon-icon:before { content: "\e66a"; }

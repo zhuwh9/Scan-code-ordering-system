@@ -9,15 +9,20 @@ module.exports = function(app) {
 	
 
 
-	/*********************************************************************/
-	//user's behavior
+	/*
+	**************user's behaviors******************************************
+	*/
 
+	//render home page
 	app.get('/', function(req, res) {
 		console.log('Wecome!');
+		//res.render('');
 	});
 
-	app.post('/restaurant',  restaurant.getRestaurantData);	//render restaurant's page and foods
+	//render food lists
+	app.get('/restaurant',  restaurant.getRestaurantData);
 
+	//get order datas from coutomer and generate order
 	app.post('/order', system.generateOrder);
 
 	app.get('/menu', restaurant.getMenuData);
@@ -29,23 +34,23 @@ module.exports = function(app) {
 
 
 
-	/*********************************************************************/
-	//restaurant's behavior
+	/*
+	**************restaurant's behaviors******************************************
+	*/
 	app.get('/merchantRegister', function(req, res) {
-		//render register page
-		//...
+		console.log('render register page!');
 	});
 
 	app.post('/merchantRegister',function(req, res) {
-		//render login page
+		console.log('register!');
 	});
 
 	app.get('/merchantLogin', function(req, res) {
-		//render login page
+		console.log('render login page!');
 	});
 
 	app.post('/merchantLogin', function(req, res) {
-		//render login page
+		console.log('login!');
 	});
 
 	app.post('/addFood', restaurant.addFood);
@@ -53,8 +58,10 @@ module.exports = function(app) {
 	app.post('/deleteFood', restaurant.deleteFood);
 
 	app.post('/receiveOrder', restaurant.receiveOrder);
+	app.get('/receiveOrder', restaurant.receiveOrder);
 
-	//end restaurant's behavior
-	/*********************************************************************/
+	/*
+	**************end restaurant's behaviors**************************************
+	*/
 
 }
