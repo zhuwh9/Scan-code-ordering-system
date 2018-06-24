@@ -1,0 +1,452 @@
+body {
+    margin: auto;
+    font-family: "Microsoft YaHei", 微软雅黑, serif;
+    font-size: 0;
+    background: black;
+    min-width: 1000px;
+    width: 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+*:focus {
+    outline: none;
+}
+
+div,
+table {
+    border-spacing: 0;
+    position: relative;
+    z-index: 3;
+}
+
+a {
+    text-decoration: none;
+}
+
+div#background-poster {
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    width: 100%;
+    min-width: 800px;
+    height: calc(100% - 70px);
+    background: url(res/bg.webp) no-repeat center;
+    background-size: cover;
+}
+
+#background-poster + img {
+    position: absolute;
+    z-index: 2;
+    top: 70px;
+    width: 100%;
+    min-width: 800px;
+    height: 100%;
+}
+
+/*中间的信息部分*/
+
+#message-part {
+    margin: 73px auto 58px;
+    width: 100%;
+    max-height: 293px;
+    max-width: 1280px;
+}
+
+#message-part tr,
+#message td {
+    height: 293px;
+    padding: 0;
+}
+
+#video-poster {
+    position: relative;
+    width: 199px;
+    height: 293px;
+    padding: 0;
+}
+
+#video-poster img {
+    width: 100%;
+    height: 100%;
+}
+
+#play {
+    position: absolute;
+    left: 57px;
+    top: 94px;
+    width: 85px;
+    height: 85px;
+    background-size: cover;
+    background: rgba(0, 0, 0, 0) url(res/play.png);
+    border: 0 none;
+}
+
+#play:hover {
+    cursor: pointer;
+}
+
+#message {
+    display: inline-block;
+    height: 294px;
+    padding-left: 51px;
+    padding-right: 51px;
+    font-size: 13px;
+    color: white;
+    overflow: hidden;
+}
+
+#message p {
+    width: 100%;
+    margin: 0;
+}
+
+#movie-name {
+    font-size: 30px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+#introduce {
+    padding-bottom: 13px;
+}
+
+#mark-part {
+    position: relative;
+    width: 342px;
+    height: 277px;
+}
+
+#watched {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 17px;
+    margin: 0;
+    width: 342px;
+    padding: 17px 19px 14px 19px;
+}
+
+#star-bar {
+    position: relative;
+    display: inline-block;
+    width: 231px;
+    height: 17px;
+    padding: 14px 20px 10px 19px;
+}
+
+#star-bar img {
+    position: relative;
+    width: 15px;
+    height: 14px;
+    margin-right: 9px;
+    z-index: 4;
+}
+
+#star-bar img:nth-child(11) {
+    margin-right: 0;
+}
+
+#star-bar-bottom {
+    width: 135px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 41px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+#star-bar-top {
+    width: 135px;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    height: 41px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#score {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #e3c660;
+    font-size: 17px;
+    margin: 0;
+    width: 100px;
+    padding: 10px 0 9px 10px;
+}
+
+#comment-detail {
+    padding: 10px 19px 0 19px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 342px;
+}
+
+textarea {
+    background-color: rgba(225, 225, 225, 0.5);
+    resize: none;
+    width: 336px;
+    height: 141px;
+    border-width: 0;
+    padding: 2px;
+}
+
+#release-comment {
+    width: 380px;
+    height: 52px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#release-comment button {
+    width: 73px;
+    height: 31px;
+    position: absolute;
+    right: 19px;
+    bottom: 10px;
+    font-size: 16px;
+    background-color: #e3263e;
+    color: white;
+    border-width: 0;
+}
+
+/*下面的部分*/
+
+#cinema-comment {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1280px;
+    margin-bottom: 100px;
+}
+
+#choices {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 63px;
+}
+
+#choices p {
+    display: inline-block;
+    font-size: 17px;
+    width: 198px;
+    margin: 0;
+    text-align: center;
+    line-height: 59px;
+    color: white;
+    border: 0 solid rgba(0, 0, 0, 0);
+    border-top-width: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#choices p:hover {
+    cursor: pointer;
+}
+
+#choices > p.cinema-comment-selected {
+    color: #c3263e;
+    border-color: #c3263e;
+    background-color: white;
+}
+
+#choices > p.cinema-comment-selected:hover {
+    cursor: default;
+}
+
+#cinema-part, #comment-part  {
+    position: absolute;
+    top: 63px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding-left: 65px;
+    padding-right: 65px;
+    background: white;
+
+}
+/*影院部分*/
+
+
+#cinema-head {
+    width: 100%;
+}
+
+#cinema-location {
+    border-bottom: 2px solid #eeeeee;
+    height: 60px;
+}
+
+#cinema-location p {
+    display: inline-block;
+    height: 60px;
+    width: 160px;
+    line-height: 60px;
+    font-size: 17px;
+    color: #b5b5b5;
+    margin: 0;
+}
+
+#cinema-location select {
+    position: relative;
+    border-width: 0;
+    width: 80px;
+    margin-right: 80px;
+    font-size: 16px;
+    color: #b5b5b5;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(res/arrow.png) no-repeat right;
+}
+
+#cinema-location select span {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+}
+
+#cinema-choices {
+    border-width: 0;
+    border-bottom: 2px solid #eeeeee;
+    padding: 0;
+    margin: 0;
+}
+
+#cinema-choices tr,
+#cinema-choices td {
+    padding: 0;
+}
+
+#cinema-choices p {
+    display: inline-block;
+    height: 60px;
+    width: 160px;
+    line-height: 60px;
+    font-size: 17px;
+    color: #b5b5b5;
+    margin: 0;
+}
+
+#cinema-choices ul {
+    padding: 0;
+    margin: 0;
+}
+
+#cinema-choices li {
+    display: inline-block;
+    width: 150px;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    color: #b5b5b5;
+}
+
+#cinema-choices a {
+    display: inline-block;
+    height: 60px;
+    width: 90px;
+    line-height: 60px;
+    font-size: 12px;
+    color: #b5b5b5;
+    margin: 0;
+}
+
+#cinema-message {
+    width: 100%;
+}
+
+#cinema-message td {
+    border-bottom: 1px solid #eeeeee;
+    padding: 30px 0 28px 0;
+    vertical-align: top;
+}
+
+#cinema-message td img {
+    width: 185px;
+    height: 130px;
+}
+
+#cinema-message td:first-child {
+    width: 315px;
+}
+
+#cinema-message td p:first-child {
+    width: 100%;
+    font-size: 16px;
+    color: black;
+}
+
+#cinema-message td p:nth-child(2) {
+    width: 100%;
+    font-size: 16px;
+    color: #b5b5b5;
+}
+
+#cinema-message td:nth-child(3) {
+    width: 137px;
+}
+
+#cinema-message button {
+    width: 137px;
+    height: 30px;
+    border-width: 0;
+    font-size: 16px;
+    color: white;
+    background-color: #c3263e;
+}
+
+#more-cinema {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+#more-cinema a {
+    margin: auto;
+    color: #b5b5b5;
+}
+
+/* 评论部分 */
+
+#comment-part {
+    width: calc(100% - 130px);
+}
+
+#comment-part > ul {
+    width: 100%;
+    margin: 50px 0;
+    padding: 0;
+}
+
+#comment-part > ul > li {
+    list-style: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
+    border: 0 solid #b5b5b5;
+    border-top-width: 1px;
+}
+
+#comment-part > ul > li:last-child {
+    border-bottom-width: 1px;
+}
+
+#comment-part li > p:first-child {
+    color: #b5b5b5;
+}
+
+#comment-part li > p:last-child {
+    color: black;
+}
+
+#comment-part span.comment-user {
+    margin-right: 20px;
+}

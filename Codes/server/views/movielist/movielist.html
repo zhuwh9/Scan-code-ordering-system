@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>电影</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/static/movielist/movielist.css">
+    <link rel="stylesheet" type="text/css" href="/static/common/login and register part.css">
+    <link rel="stylesheet" type="text/css" href="/static/movielist/play-video.css">
+    <link rel="stylesheet" type="text/css" href="/static/common/top-bar.css">
+    <script type="text/javascript" src="/static/common/jquery-latest.js"></script>
+    <script type="text/javascript" src="/static/common/login and register part.js"></script>
+    <script type="text/javascript" src="/static/movielist/play-video.js"></script>
+    <script type="text/javascript" src="/static/movielist/movielist.js"></script>
+</head>
+
+<body>
+    <div id="play-video">
+        <p align="right">×</p>
+        <!-- 这里会被插入视频 -->
+    </div>
+    <div id="login-register">
+        <div id="register-part">
+            <h1>用户注册<span class="close">×</span></h1>
+            <div>
+                <input type="text" name="phonenum" placeholder="请输入11位手机号码">
+                <span id="error-num" class="error">请输入11位手机号码</span>
+                <input type="password" name="password" placeholder="请输入6-20位密码，必须包含字母和数字">
+                <i id="eye" class="see-able"></i>
+                <span id="error-pwd" class="error" >请输入6-20位密码，必须包含字母和数字</span>
+                <input type="text" name="check-word" placeholder="请输入验证码">
+                <button type="button" id="get-check-word">获取验证码</button>
+                <span id="error-check" class="error">验证码错误，请重新输入</span>
+                <input type="checkbox" name="agree">
+                <span>已阅读并同意<a href="http://www.baidu.com">用户注册协议</a></span>
+                <a id="login">已有账号，去登录</a>
+                <button type="button">注册</button>
+            </div>
+        </div>
+        <div id="avatar-part">
+            <h1>个人信息<span class="close">×</span></h1>
+            <div>
+                <img src="/static/movielist/res/icon.png" />
+            </div>
+            <p>手机号：<span>13800138000</span></p>
+            <button id="logout">退出登录</button>
+            <button id="select-file">选择文件</button>
+            <input type="file" accept="image/*">
+            <button id="upload">上传</button>
+        </div>
+    </div>
+    <div id="top-bar">
+        <div>
+            <div class="top-bar-link">
+                <a href="/">首页</a>
+            </div>
+            <div class="top-bar-link" id="selected">
+                <a href="">电影</a>
+            </div>
+            <div class="top-bar-link">
+                <!-- TODO: 修改这里的地址 -->
+                <a href="https://www.baidu.com">影院</a>
+            </div>
+            <img id="head-icon" src="/static/movielist/res/icon.png" title="头像">
+            <div id="search-bar">
+                <input id="search-bar-input" type="text" name="keyword" placeholder="输入电影名称">
+                <a href="http://www.baidu.com"><img src="/static/movielist/res/tmp.png" id="search-bar-img"></a>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <!--&lt;!&ndash; 这里一个li就是一个电影的条目 &ndash;&gt;-->
+        <!--<li style="background-image: url(/static/movielist/res/bg-1.webp);">-->
+            <!--<div class="video" style="background-image: url(/static/movielist/res/poster-1.webp)">-->
+                <!--<button class="play"></button>-->
+                <!--<button class="check-pocket">查询订票</button>-->
+                <!--<button class="detail">查看详情</button>-->
+                <!--<span class="video-url" hidden></span>-->
+            <!--</div>-->
+            <!--<div class="message">-->
+                <!--<p class="name">你的名字。</p>-->
+                <!--<p class="score">5.1/10</p>-->
+                <!--<p class="introduce">简介：<span>《你的名字。》是由新海诚执导，由神木隆之介、上白石萌音担任主要配音的一部原创日本动画电影。作品于2016年8月26日在日本上映。中国内地于2016年12月2日上映。作品讲述了男女高中生在梦中相遇，并寻找彼此的故事。</span></p>-->
+                <!--<p class="simple-message">日本（日语）| 106分钟 | 剧情/爱情/动画</p>-->
+                <!--<p class="director">导演：<span>新海诚</span></p>-->
+                <!--<p class="actors">主演：<span> 神木隆之介/上白石萌音/长泽雅美/市原悦子/成田凌</span></p>-->
+                <!--<p class="producer">出品：<span>没查到</span></p>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li style="background-image: url(/static/movielist/res/bg-1.webp);">-->
+            <!--<div class="video" style="background-image: url(/static/movielist/res/poster-1.webp)">-->
+                <!--<button class="play"></button>-->
+                <!--<button class="check-pocket">查询订票</button>-->
+                <!--<button class="detail">查看详情</button>-->
+                <!--<span class="video-url" hidden></span>-->
+            <!--</div>-->
+            <!--<div class="message">-->
+                <!--<p class="name">你的名字。</p>-->
+                <!--<p class="score">5.1/10</p>-->
+                <!--<p class="introduce">简介：<span>《你的名字。》是由新海诚执导，由神木隆之介、上白石萌音担任主要配音的一部原创日本动画电影。作品于2016年8月26日在日本上映。中国内地于2016年12月2日上映。作品讲述了男女高中生在梦中相遇，并寻找彼此的故事。</span></p>-->
+                <!--<p class="simple-message">日本（日语）| 106分钟 | 剧情/爱情/动画</p>-->
+                <!--<p class="director">导演：<span>新海诚</span></p>-->
+                <!--<p class="actors">主演：<span> 神木隆之介/上白石萌音/长泽雅美/市原悦子/成田凌</span></p>-->
+                <!--<p class="producer">出品：<span>没查到</span></p>-->
+            <!--</div>-->
+        <!--</li>-->
+    </ul>
+</body>
+
+</html>
