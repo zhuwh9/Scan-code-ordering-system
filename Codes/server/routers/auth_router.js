@@ -20,6 +20,10 @@ module.exports = function(app) {
 
 	app.post('/order', system.generateOrder);
 
+	app.get('/menu', restaurant.getMenuData);
+
+	app.get('/getOrder', system.getOrder);
+	
 	//end user's behavior
 	/*********************************************************************/
 

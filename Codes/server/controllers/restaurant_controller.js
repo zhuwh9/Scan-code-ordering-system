@@ -4,6 +4,35 @@ var Food = mongoose.model('Food');
 var Order = mongoose.model('Order');
 var bodyParser = require('body-parser');
 
+exports.getMenuData = function(req, res) {
+	console.log(req.query.restaurant_id);
+	Food.find({resturant_id: req.query.restaurant_id})
+	.exec(function(err, foods) {
+		console.log(foods.length);
+			if(err) {
+				console.log(err);
+				res.status(404);
+				res.end();
+			} else {
+				console.log('ok');
+				var fooddata = {data: []};
+				for (food in foods) {
+					console.log(food);
+					var data = {
+						food_name: foods[food].food_name,
+						food_type: foods[food].food_type,
+						food_price: foods[food].food_price,
+						food_description: foods[food].food_description,
+						picture_url: foods[food].picture_url
+					}
+					fooddata.data.push(data);
+				}
+				res.status(200).json(fooddata);
+				res.end();
+			}
+	});
+}
+
 exports.getRestaurantData = function(req, res) {
 	Food.find({restaurant_id: req.query.restaurant_id})
 	.exec(function(err, foods) {
@@ -34,7 +63,6 @@ exports.getRestaurantData = function(req, res) {
 
 exports.receiveOrder = function(req, res) {
 	var time = req.query.time;
-	
 
 	Order.find({restaurant_id: req.query.restaurant_id, order_time: req.query.time})
 	.exec(function(err, Orders) {
@@ -65,7 +93,7 @@ exports.receiveOrder = function(req, res) {
 
 exports.addFood = function(req, res) {
 	console.log(req.body);
-	var rastaurant_id = req.body.rastaurant_id;
+	var resturant_id = req.body.rastaurant_id;
 	var food_name = req.body.food_name;
 	var food_type = req.body.food_type;
 	var food_price = req.body.food_price;
@@ -73,7 +101,7 @@ exports.addFood = function(req, res) {
 	var picture_url = "/static/foods/images/" + req.body.picture_url;
 
 	var food = new Food();
-		food.set('rastaurant_id', rastaurant_id);
+		food.set('resturant_id', resturant_id);
 		food.set('food_name', food_name);
 		food.set('food_type', food_type);
 		food.set('food_price', food_price);
@@ -88,7 +116,7 @@ exports.addFood = function(req, res) {
 			} else {
 				console.log("ok");
 				var data = {
-					rastaurant_id: rastaurant_id,
+					resturant_id: resturant_id,
 					food_name: food_name,
 					food_type: food_type,
 					food_price: food_price,
@@ -103,9 +131,9 @@ exports.addFood = function(req, res) {
 
 exports.deleteFood = function(req, res) {
 	console.log(req.body);
-	var rastaurant_id = req.body.rastaurant_id;
+	var resturant_id = req.body.resturant_id;
 	var food_name = req.body.food_name;
-	Food.remove({rastaurant_id: rastaurant_id, food_name: food_name}, function(err, docs) {
+	Food.remove({resturant_id: resturant_id, food_name: food_name}, function(err, docs) {
 		if (err) {
 			console.log(err);
 		} else {
