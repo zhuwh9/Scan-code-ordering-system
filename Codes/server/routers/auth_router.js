@@ -25,9 +25,12 @@ module.exports = function(app) {
 	//get order datas from coutomer and generate order
 	app.post('/order', system.generateOrder);
 
-	/*
-	**************end user's behaviors***************************************
-	*/
+	app.get('/menu', restaurant.getMenuData);
+
+	app.get('/getOrder', system.getOrder);
+	
+	//end user's behavior
+	/*********************************************************************/
 
 
 
