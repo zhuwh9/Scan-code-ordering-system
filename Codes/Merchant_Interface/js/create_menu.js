@@ -23,11 +23,12 @@ function bind_confirm() {
         images.src=$("#userImg")[0].src;
 		var menu_picture=getBase64Image(images);
 		mui.fire(mainPage,"confirm_create_menu",{
-            "menu_name":menu_name,
-            "menu_price":menu_price,
-            "menu_description":menu_description,
-            "menu_type":menu_type,
-            "menu_picture":menu_picture
+			"restaurant_id":"test_restraurant",
+            "food_name":menu_name,
+            "food_type":menu_type,
+            "food_price":menu_price,
+            "food_description":menu_description,
+            "picture_url":menu_picture
         });
         mui.back();
 	})
@@ -73,40 +74,10 @@ function galleryImages() {
 },function(e){},{});
 };  
  
-        //上传图片 
-       /* function uploadHeadImg(imgPath){ 
-        	alert(imgPath)
-            //选中图片之后，头像当前的照片变为选择的照片 
-            var mainImg=document.getElementById('userImg'); 
-            mainImg.src=imgPath; 
-             
-            var images=new Image(); 
-            images.src=imgPath; 
-            var imgData=getBase64Image(images); 
-            mui.ajax('',{  //第一个参数是接口名 
-                data:{ 
-                    'imgDatas':imgData 
-                }, 
-                dataType:'json',//服务器返回json格式数据 
-                type:'post',//HTTP请求类型 
-                timeout:10000,//超时时间设置为10秒； 
-                success:function(data){ 
-                    if(data.status=='1'){ 
-                        mui.alert('上传成功！'); 
-                    } 
-                }, 
-                error:function(xhr,type,errorThrown){ 
-                    if(type=='timeout'){ 
-                        mui.alert('服务器连接超时，请稍后再试'); 
-                    } 
-                } 
-            }); 
-        } 
- */
  
-        //压缩图片转成base64 
-        function getBase64Image(img){ 
-            var canvas=document.createElement("canvas"); 
+//压缩图片转成base64 
+function getBase64Image(img){ 
+    var canvas=document.createElement("canvas"); 
             var width=img.width; 
             var height=img.height;
             if(width>height){ 
@@ -127,5 +98,5 @@ function galleryImages() {
             ctx.drawImage(img,0,0,width,height); 
  
             var dataUrl=canvas.toDataURL('image/png',0.8); 
-            return dataUrl.replace('data:image/png:base64,',''); 
-        } 
+    return dataUrl.replace('data:image/png:base64,',''); 
+} 
