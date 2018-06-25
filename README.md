@@ -20,7 +20,7 @@ Romance cloud catering service platform
 * 1、[About(项目规划)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/project%20planning.md)
 * 2、[Team profile(团队组建)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task2_team_profile.md)
 * 3、[Investigation(项目前期调研)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/product-survey-report.md)
-* 4、[Vision(项目愿景)]
+* 4、[Vision(项目愿景)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/vision.md)
 * 5、[Product Backlog(产品特性)]
 * 6、Requirement specification(需求规格说明)
   * 6.1、[Usecase Diagram(用例图)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
