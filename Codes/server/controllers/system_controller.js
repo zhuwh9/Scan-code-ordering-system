@@ -49,14 +49,13 @@ exports.generateOrder = function(req, res) {
 	var total_num = req.body.total_num;
 	var total_price = req.body.total_price;
 
-	var newDate = new Date();
-	newDate.setTime(order_time * 1000);
-	console.log('time is:' + newDate.toDateString());
+	var orderTime = new Date(order_time);
+	console.log('time is:' + orderTime);
 
 	//add order to db
 	var order = new Order({order_num: order_num});
 		order.set('table_num', table_num);
-		order.set('order_time', order_time);
+		order.set('order_time', orderTime.getTime());
 		order.set('menu', JSON.stringify(menu));
 		order.set('total_num', total_num);
 		order.set('total_price', total_price);

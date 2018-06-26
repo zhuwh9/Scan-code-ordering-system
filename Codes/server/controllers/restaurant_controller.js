@@ -63,8 +63,9 @@ exports.getRestaurantData = function(req, res) {
 
 exports.receiveOrder = function(req, res) {
 	var time = req.query.time;
-
-	Order.find({restaurant_id: req.query.restaurant_id, order_time: req.query.time})
+	var requestTime = new Date(time).getTime();
+	
+	Order.find({order_time:{"$gte":(requestTime - 10000)}, restaurant_id:req.query.restaurant_id})
 	.exec(function(err, Orders) {
 		console.log(Orders.length);
 			if(err) {

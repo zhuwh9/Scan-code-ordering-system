@@ -20,7 +20,7 @@ Romance cloud catering service platform
 * 1、[About(项目规划)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/project%20planning.md)
 * 2、[Team profile(团队组建)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task2_team_profile.md)
 * 3、[Investigation(项目前期调研)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/product-survey-report.md)
-* 4、[Vision(项目愿景)]
+* 4、[Vision(项目愿景)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/vision.md)
 * 5、[Product Backlog(产品特性)]
 * 6、Requirement specification(需求规格说明)
   * 6.1、[Usecase Diagram(用例图)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_usecase_diagram.md)
@@ -28,22 +28,24 @@ Romance cloud catering service platform
   * 6.3、[Domian Model(领域模型)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_domian_model.md)
   * 6.4、[State Model(状态模型)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_state_model.md)
   * 6.5、[System Sequence Diagram(功能模型)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task6_System_sequence_diagrams.md)
+  * 6.6、[Supplementary Requirements(补充需求)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/supple-requirement.md)
 * 7、Design(设计)
   * 7.1、UI design
     * XX 用例 UI设计
   * [7.2 Database design](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task7_database_design.md)
     * [7.2.1 用户及权限系统数据库设计](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task7_database_design.md)
     * [7.2.2 订餐系统数据库设计](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task7_database_design.md)
-    * 7.2.x 第三方数据评审结果
+    * 7.2.3 第三方数据评审结果
   * 7.3 [API 设计](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/API%E8%AF%B4%E6%98%8E%E4%B9%A6.md)
+  * 7.4 [Software Architecture Document](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/software_archit_doc.md)
 * 8、生产规范与指南
   * 8.1 XX 代码规范
-  * 8.2 REST API 设计规范
+  * 8.2 [REST API 设计规范](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/rest-api-desn.md)
 * X1 meet_recording
   * [inception meeting (18/03/20)](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/meeting-record.md)
 * X2 Tech/Work Report
   * 学号-title
 * XX 建模练习
-  * XX1 [XX应用_淘宝网购业务流程](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/lesson9_XX%E5%BB%BA%E6%A8%A1%E7%BB%83%E4%B9%A0/%E8%BD%AF%E4%BB%B6%E6%8F%8F%E8%BF%B0%E6%96%87%E6%A1%A3.pdf)
+  * XX1 [应用_淘宝网购业务流程](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/lesson9_XX%E5%BB%BA%E6%A8%A1%E7%BB%83%E4%B9%A0/%E8%BD%AF%E4%BB%B6%E6%8F%8F%E8%BF%B0%E6%96%87%E6%A1%A3.pdf)
   * XX2 [建模要求](https://github.com/SAAD-CAT/Scan-code-ordering-system/tree/master/Documents/lesson9_XX%E5%BB%BA%E6%A8%A1%E7%BB%83%E4%B9%A0)
   * XX3 [建模者答案与评价](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/lesson9_XX建模练习/建模者答案与评价.md)
