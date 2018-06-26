@@ -37,6 +37,7 @@ Romance cloud catering service platform
     * [7.2.2 订餐系统数据库设计](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/task7_database_design.md)
     * 7.2.3 第三方数据评审结果
   * 7.3 [API 设计](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/API%E8%AF%B4%E6%98%8E%E4%B9%A6.md)
+  * 7.4 [Software Architecture Document](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/software_archit_doc.md)
 * 8、生产规范与指南
   * 8.1 XX 代码规范
   * 8.2 [REST API 设计规范](https://github.com/SAAD-CAT/Scan-code-ordering-system/blob/master/Documents/rest-api-desn.md)
