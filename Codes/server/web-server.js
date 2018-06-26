@@ -9,7 +9,6 @@ var mongoose = require('mongoose');
 require('./models/food_model.js');
 require('./models/order_model.js');
 require('./models/restaurant_model.js');
-require('./models/table_model.js');
 
 var conn = mongoose.connect('mongodb://localhost:27017/mydatabase');
 //console.log(conn.connections[0].collections);
