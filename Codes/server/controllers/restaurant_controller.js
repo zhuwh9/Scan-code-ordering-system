@@ -34,6 +34,7 @@ exports.getMenuData = function(req, res) {
 }
 
 exports.getRestaurantData = function(req, res) {
+	console.log('start to get restaurant datas');
 	console.log(req.body);
 	Food.find({restaurant_id: req.query.restaurant_id})
 	.exec(function(err, foods) {
@@ -62,7 +63,8 @@ exports.getRestaurantData = function(req, res) {
 	});	
 }
 
-exports.receiveAllOrder = function(req, res) {
+exports.receiveAllOrders = function(req, res) {
+	console.log('start to send orders of restaurant');
 	console.log(req.body);
 	var time = req.query.time;
 	var requestTime = new Date(time).getTime();
@@ -89,14 +91,15 @@ exports.receiveAllOrder = function(req, res) {
 					orderdata.data.push(data);
 				}
 				res.status(200).json(orderdata);
-				console.log('respond orders success');
+				console.log('respond all orders success');
 				res.end();
 			}
 	});	
 };
 
 
-exports.receiveOrder = function(req, res) {
+exports.receiveOrders = function(req, res) {
+	console.log('start to send orders of restaurant');
 	console.log(req.body);
 	var time = req.query.time;
 	var requestTime = new Date(time).getTime();
@@ -124,7 +127,7 @@ exports.receiveOrder = function(req, res) {
 					orderdata.data.push(data);
 				}
 				res.status(200).json(orderdata);
-				console.log('respond all orders success');
+				console.log('respond orders success');
 				res.end();
 			}
 	});	
@@ -132,6 +135,7 @@ exports.receiveOrder = function(req, res) {
 
 
 exports.addFood = function(req, res) {
+	console.log('start to add food');
 	console.log(req.body);
 	var resturant_id = req.body.rastaurant_id;
 	var food_name = req.body.food_name;
@@ -170,6 +174,7 @@ exports.addFood = function(req, res) {
 };
 
 exports.deleteFood = function(req, res) {
+	console.log('start to delete food');
 	console.log(req.body);
 	var resturant_id = req.body.resturant_id;
 	var food_name = req.body.food_name;

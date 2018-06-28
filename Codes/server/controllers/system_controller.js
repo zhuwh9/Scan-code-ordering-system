@@ -42,6 +42,7 @@ exports.getOrder = function(req, res) {
 }
 
 exports.generateOrder = function(req, res) {
+	console.log('start to generate order');
 	console.log(req.body);
 	var resturant_id = req.body.resturant_id;
 	var table_num = req.body.table_num;

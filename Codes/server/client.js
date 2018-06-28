@@ -7,29 +7,29 @@ var http = require('http');
 		method		: POST
  		path		: /order
  *********************************************/
-// var time = new Date();
-// var data = JSON.stringify({
-// 	restaurant_id: '123456',
-// 	table_num: '1',
-// 	order_time: time,
-// 	menu: [
-// 		{'menu_name':encodeURI('螺蛳粉','utf-8'),'price':'13','num':'2'},
-// 		{'menu_name':encodeURI('过桥米线','utf-8'),'price':'11','num':'1'}
-// 	],
-// 	total_num: '2',
-// 	total_price: '$30'
-//  });
+var time = new Date();
+var data = JSON.stringify({
+	restaurant_id: '123456',
+	table_num: '1',
+	order_time: time,
+	menu: [
+		{'menu_name':encodeURI('螺蛳粉','utf-8'),'price':'13','num':'2'},
+		{'menu_name':encodeURI('过桥米线','utf-8'),'price':'11','num':'1'}
+	],
+	total_num: '2',
+	total_price: '$30'
+ });
 
-// var options = {
-// 	host: '192.168.59.160',
-// 	path: '/order',
-// 	port: '5000',
-// 	method: 'POST',
-// 	headers: {
-//         'Content-Type':'application/json;charset=UTF-8',
-//         'Content-Length':data.length
-//     }
-// };
+var options = {
+	host: '192.168.43.233',
+	path: '/order',
+	port: '5000',
+	method: 'POST',
+	headers: {
+        'Content-Type':'application/json;charset=UTF-8',
+        'Content-Length':data.length
+    }
+};
 
 
 
@@ -48,7 +48,7 @@ var http = require('http');
 // });
 
 // var options = {
-// 	host: '192.168.59.160',
+// 	host: '192.168.43.233',
 // 	path: '/addFood',
 // 	port: '5000',
 // 	method: 'POST',
@@ -90,20 +90,20 @@ var http = require('http');
 		method		: POST
  		path		: /receiveAllOrder
 *********************************************/
-var data = JSON.stringify({
-	restaurant_id: '123456'
- });
+// var data = JSON.stringify({
+// 	restaurant_id: '123456'
+//  });
 
-var options = {
-	host: '192.168.59.160',
-	path: '/receiveAllOrder',
-	port: '5000',
-	method: 'POST',
-	headers: {
-        'Content-Type':'application/json;charset=UTF-8',
-        'Content-Length':data.length
-    }
-};
+// var options = {
+// 	host: '192.168.59.160',
+// 	path: '/receiveAllOrder',
+// 	port: '5000',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
 
 
 

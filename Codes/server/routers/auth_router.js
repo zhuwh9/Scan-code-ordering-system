@@ -58,8 +58,8 @@ module.exports = function(app) {
 
 	app.post('/deleteFood', restaurant.deleteFood);
 
-	app.post('/receiveOrder', restaurant.receiveOrder);
-	app.post('/receiveAllOrder', restaurant.receiveAllOrder);
+	app.post('/receiveOrders', restaurant.receiveOrders);
+	app.post('/receiveAllOrders', restaurant.receiveAllOrders);
 
 	/**************************************************************************
 							end restaurant's behaviors
