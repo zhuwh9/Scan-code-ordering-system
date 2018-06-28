@@ -35,4 +35,4 @@ app.engine('html', require('ejs').renderFile);
 require('./routers/auth_router')(app);
 app.listen(5000);
 
-console.log("the web-server is running on 'localhost:5000'");
+console.log("the web-server is running on port 5000");

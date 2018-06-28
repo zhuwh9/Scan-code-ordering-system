@@ -10,6 +10,7 @@ function hashPW(password) {
 }
 
 exports.getOrder = function(req, res) {
+	console.log(req.body);
 	var resturant_id = req.body.resturant_id;
 	Order.find({resturant_id: req.query.restaurant_id})
 	.exec(function(err, orders) {
@@ -41,6 +42,7 @@ exports.getOrder = function(req, res) {
 }
 
 exports.generateOrder = function(req, res) {
+	console.log(req.body);
 	var resturant_id = req.body.resturant_id;
 	var table_num = req.body.table_num;
 	var order_time = req.body.order_time;
@@ -66,7 +68,7 @@ exports.generateOrder = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log("success");
+				console.log("generated order success");
 				//req.session.msg = 'success';
 				var data = {
 					order_num: order_num,

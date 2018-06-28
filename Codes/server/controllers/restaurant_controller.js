@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 exports.getMenuData = function(req, res) {
 	console.log(req.query.restaurant_id);
-	Food.find({resturant_id: req.query.restaurant_id})
+	Food.find({restaurant_id: req.query.restaurant_id})
 	.exec(function(err, foods) {
 		console.log(foods.length);
 			if(err) {
@@ -34,6 +34,7 @@ exports.getMenuData = function(req, res) {
 }
 
 exports.getRestaurantData = function(req, res) {
+	console.log(req.body);
 	Food.find({restaurant_id: req.query.restaurant_id})
 	.exec(function(err, foods) {
 		console.log(foods.length);
@@ -61,7 +62,42 @@ exports.getRestaurantData = function(req, res) {
 	});	
 }
 
+exports.receiveAllOrder = function(req, res) {
+	console.log(req.body);
+	var time = req.query.time;
+	var requestTime = new Date(time).getTime();
+	
+	Order.find({restaurant_id:req.query.restaurant_id})
+	.exec(function(err, orders) {
+		console.log(orders.length);
+			if(err) {
+				console.log(err);
+				res.status(404);
+				res.end();
+			} else {
+				var orderdata = {data: []};
+				for (order in orders) {
+					var data = {
+						order_num: orders[order].order_num,
+						restaurant_id: orders[order].restaurant_id,
+						table_num: orders[order].table_num,
+						order_time: new Date(orders[order].order_time),
+						menu: orders[order].menu,
+						total_num: orders[order].total_num,
+						total_price: orders[order].total_price
+					}
+					orderdata.data.push(data);
+				}
+				res.status(200).json(orderdata);
+				console.log('respond orders success');
+				res.end();
+			}
+	});	
+};
+
+
 exports.receiveOrder = function(req, res) {
+	console.log(req.body);
 	var time = req.query.time;
 	var requestTime = new Date(time).getTime();
 	
@@ -76,12 +112,11 @@ exports.receiveOrder = function(req, res) {
 				console.log(orders.length);
 				var orderdata = {data: []};
 				for (order in orders) {
-					console.log(order);
 					var data = {
 						order_num: orders[order].order_num,
 						restaurant_id: orders[order].restaurant_id,
 						table_num: orders[order].table_num,
-						order_time: orders[order].order_time,
+						order_time: new Date(orders[order].order_time),
 						menu: orders[order].menu,
 						total_num: orders[order].total_num,
 						total_price: orders[order].total_price
@@ -89,11 +124,12 @@ exports.receiveOrder = function(req, res) {
 					orderdata.data.push(data);
 				}
 				res.status(200).json(orderdata);
-				console.log('send datas success');
+				console.log('respond all orders success');
 				res.end();
 			}
 	});	
 };
+
 
 exports.addFood = function(req, res) {
 	console.log(req.body);
@@ -118,7 +154,7 @@ exports.addFood = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log("ok");
+				console.log("add food success!");
 				var data = {
 					resturant_id: resturant_id,
 					food_name: food_name,
@@ -141,7 +177,7 @@ exports.deleteFood = function(req, res) {
 		if (err) {
 			console.log(err);
 		} else {
-			console.log('delete success');
+			console.log('delete success!');
 		}
 	})
 };
