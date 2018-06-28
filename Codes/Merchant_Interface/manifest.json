@@ -129,7 +129,9 @@
 	"dependencies": {
 		"pages": {
 			"index.html": {
-				"resources": [],
+				"resources": [
+					"fonts/mui.ttf"
+				],
 				"refer": [
 					"create_menu.html"
 				],
@@ -146,7 +148,6 @@
 		"idle": {
 			"resources": [
 				"js/iconfont.js",
-				"fonts/mui.ttf",
 				"imgs/timg.jpg",
 				"css/mui.css",
 				"js/scos.js",

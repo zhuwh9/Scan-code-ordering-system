@@ -1,12 +1,16 @@
 {
-	"index.html": {
-		"refer": [
-			"create_menu.html"
-		]
-	},
-	"create_menu.html": {
-		"refer": [
-			"create_menu.html"
-		]
-	}
+  "index.html": {
+    "refer": [
+      "create_menu.html"
+    ],
+    "resources": [
+      "fonts/mui.ttf"
+    ]
+  },
+  "create_menu.html": {
+    "refer": [
+      "create_menu.html"
+    ],
+    "resources": []
+  }
 }
