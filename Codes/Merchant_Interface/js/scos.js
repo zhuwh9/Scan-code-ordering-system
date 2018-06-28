@@ -1,4 +1,5 @@
-var server="167.99.198.29.29:500/";
+var server="http://192.168.43.233:5000/";
+var restaurant_id="123456";
 mui.ready(function(){
    mui(".mui-bar-tab").on('tap','.mui-tab-item',function(){
       //点击tabBar的时候找到所有的div进行隐藏
@@ -17,8 +18,9 @@ window.addEventListener("confirm_create_menu",function(event) {
 })
 
 function create_menu_in_server(menu) {
-	var json_menu=JSON.stringify(menu)
-	$.post(server+'addFood', json_menu,function(data, status){
+	var json_menu=JSON.stringify(menu);
+
+	$.post(server+'addFood',json_menu,function(data, status){
 		mui.toast("创建菜单成功");
 	})
 }
@@ -38,6 +40,7 @@ function create_menu_in_client(menu) {
 
 window.onload=function() {
 	init();
+	listen_orders_from_server();
 	activate_accept_order();
 	activate_refuse_order();
 	
@@ -49,11 +52,11 @@ window.onload=function() {
 
 function init() {
 	read_menu_from_server();
-	//read_orders_from_server();
+	read_orders_from_server();
 }
 
 function read_menu_from_server() {
-	$.getJSON("url", function(json_menus) {
+	$.getJSON(server+'', function(json_menus) {
 		var menus=JSON.parse(json_menus);
 		if ($.isEmptyObject(menus)) {
 			toast("菜单为空")
@@ -98,6 +101,41 @@ function show_menu_types_in_page(menu_types) {
 	}
 }
 
+function read_orders_from_server() {
+	var json_restaurant_id=JSON.stringify({"restaurant_id":restaurant_id});
+	$.post(server+'receiveAllOrders',json_restaurant_id,function(data, status){
+		mui.toast("读取订单成功");
+		alert(data['data'].length);
+		show_orders_in_page_history(data['data']);
+	})
+}
+
+function show_orders_in_page_history(orders) {
+	//var order_num=orders.order_num, table_num=orders.table_num, order_time=orders.order_time, menu=orders.menu, table_num=orders.table_num, total_price=orders.total_price;
+	var order_html='<div class="order"><h1 class="order-title"><span class="table-num"> 7</span><span>号桌 </span><span class="order-state">已下单</span></h1><h3>订单号：<span class="order-seq-num"></span></h3><h3>下单时间：<span class="order-time"></span></h3><hr /><div class="order-content"><h2 class="menu-total"> <span>共</span><span class="total-num">3</span><span>件商品，实付￥</span><span class="total-price"></span></h2><h2><button class="accept-order">确认</button></h2></div><hr /></div>';
+	var menu_line='<h2 class="menu-line"><span class="menu-name"></span><span class="menu-price">￥13</span><span class="menu-num">x 2</span></h2>';	
+	var j=0;
+	for (j=0; j < orders.length;++j) {
+		var order_num=orders[j].order_num,table_num=orders[j].table_num, order_time=orders[j].order_time, menu=orders[j].menu, total_num=orders[j].total_num, total_price=orders[j].total_price;
+		$(".history").append(order_html);
+		var order=$(".history .order").last();
+		order.filter(".order-num").text(order_num);
+		order.filter(".order-time").text(order_time);
+		order.filter(".table-num").text(table_num);
+		order.filter(".order-seq-num").text(order_num);
+		order.filter(".total-num").text(total_num);
+		order.filter(".total-price").text(total_num);
+		
+		var order_content=order.find(".order-content");
+		for (var i=0;i<menu.length;++i) {
+			order_content.prepend(menu_line);
+			var menu_inserted=order_content.children()[0];
+			$(menu_inserted).filter(".menu-name").text(menu[i].food_name);
+			$(menu_inserted).filter(".menu-price").text("￥"+menu[i].food_price);
+			$(menu_inserted).filter(".menu-num").text("x "+menu[i].food_num);
+		}
+	}
+}
 
 function menu_bind_delete() {
 	var menu_switchs = $(".menu-switch");
@@ -238,7 +276,7 @@ function listen_orders_from_server() {
 	window.setInterval(get_orders,1000*interval);
 }
 function get_orders() {
-	$.getJSON(server+'receiveOrder', function(json_orders) {
+	$.post(server+'receiveOrder', function(json_orders) {
 		var orders=JSON.parse(json_orders);
 		if ($.isEmptyObject(orders)) {
 			//do nothing
