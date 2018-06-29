@@ -9,37 +9,6 @@ function hashPW(password) {
 				.digest('base64').toString();
 }
 
-exports.getOrder = function(req, res) {
-	console.log(req.body);
-	var restaurant_id = req.body.restaurant_id;
-	Order.find({restaurant_id: req.body.restaurant_id})
-	.exec(function(err, orders) {
-		console.log(orders.length);
-			if(err) {
-				console.log(err);
-				res.status(404);
-				res.end();
-			} else {
-				console.log('ok');
-				var orderdata = {data: []};
-				for (order in orders) {
-					console.log(order);
-					var data = {
-						order_num: orders[order].order_num,
-						restaurant_id: orders[order].restaurant_id,
-						table_num: orders[order].table_num,
-						order_time: orders[order].order_time,
-						menu: orders[order].menu,
-						total_num: orders[order].total_num,
-						total_price: orders[order].total_price
-					};
-					orderdata.data.push(data);
-				}
-				res.status(200).json(orderdata);
-				res.end();
-			}
-	});
-}
 
 exports.generateOrder = function(req, res) {
 	console.log('start to generate order');
