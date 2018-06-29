@@ -12,7 +12,7 @@ function hashPW(password) {
 exports.getOrder = function(req, res) {
 	console.log(req.body);
 	var restaurant_id = req.body.restaurant_id;
-	Order.find({restaurant_id: req.query.restaurant_id})
+	Order.find({restaurant_id: req.body.restaurant_id})
 	.exec(function(err, orders) {
 		console.log(orders.length);
 			if(err) {
