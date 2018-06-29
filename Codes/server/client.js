@@ -152,6 +152,24 @@ var options = {
 //     }
 // };
 
+/**********************************************
+		descrition  : a wrong request url will return error json message
+		method		: POST
+ 		path		: /abc
+ *********************************************/
+
+// var data = JSON.stringify({"error":"url not matched"});
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/abc',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
+
 
 var req = http.request(options, function(response){
 	var responsedata = '';
