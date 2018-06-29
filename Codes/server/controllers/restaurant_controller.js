@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 exports.getMenuData = function(req, res) {
 	console.log(req.query.restaurant_id);
-	Food.find({resturant_id: req.query.restaurant_id})
+	Food.find({restaurant_id: req.body.restaurant_id})
 	.exec(function(err, foods) {
 		console.log(foods.length);
 			if(err) {
@@ -34,7 +34,9 @@ exports.getMenuData = function(req, res) {
 }
 
 exports.getRestaurantData = function(req, res) {
-	Food.find({restaurant_id: req.query.restaurant_id})
+	console.log('start to get restaurant datas');
+	console.log(req.body);
+	Food.find({restaurant_id: req.body.restaurant_id})
 	.exec(function(err, foods) {
 		console.log(foods.length);
 			if(err) {
@@ -54,6 +56,7 @@ exports.getRestaurantData = function(req, res) {
 						picture_url: foods[food].picture_url
 					}
 					fooddata.data.push(data);
+					console.log('respond all foods success');
 				}
 				res.status(200).json(fooddata);
 				res.end();
@@ -61,11 +64,46 @@ exports.getRestaurantData = function(req, res) {
 	});	
 }
 
-exports.receiveOrder = function(req, res) {
-	var time = req.query.time;
+exports.receiveAllOrders = function(req, res) {
+	console.log('start to send orders of restaurant');
+	console.log(req.body);
+	
+	Order.find({restaurant_id:req.body.restaurant_id})
+	.exec(function(err, orders) {
+		console.log(orders.length);
+			if(err) {
+				console.log(err);
+				res.status(404);
+				res.end();
+			} else {
+				var orderdata = {data: []};
+				for (order in orders) {
+					var data = {
+						order_num: orders[order].order_num,
+						restaurant_id: orders[order].restaurant_id,
+						table_num: orders[order].table_num,
+						order_time: new Date(orders[order].order_time),
+						menu: orders[order].menu,
+						total_num: orders[order].total_num,
+						total_price: orders[order].total_price
+					}
+					orderdata.data.push(data);
+				}
+				res.status(200).json(orderdata);
+				console.log('respond all orders success');
+				res.end();
+			}
+	});	
+};
+
+
+exports.receiveOrders = function(req, res) {
+	console.log('start to send orders of restaurant');
+	console.log(req.body);
+	var time = req.body.time;
 	var requestTime = new Date(time).getTime();
 	
-	Order.find({order_time:{"$gte":(requestTime - 10000)}, restaurant_id:req.query.restaurant_id})
+	Order.find({order_time:{"$gte":(requestTime - 10000)}, restaurant_id:req.body.restaurant_id})
 	.exec(function(err, Orders) {
 		console.log(Orders.length);
 			if(err) {
@@ -76,12 +114,11 @@ exports.receiveOrder = function(req, res) {
 				console.log(orders.length);
 				var orderdata = {data: []};
 				for (order in orders) {
-					console.log(order);
 					var data = {
 						order_num: orders[order].order_num,
 						restaurant_id: orders[order].restaurant_id,
 						table_num: orders[order].table_num,
-						order_time: orders[order].order_time,
+						order_time: new Date(orders[order].order_time),
 						menu: orders[order].menu,
 						total_num: orders[order].total_num,
 						total_price: orders[order].total_price
@@ -89,15 +126,17 @@ exports.receiveOrder = function(req, res) {
 					orderdata.data.push(data);
 				}
 				res.status(200).json(orderdata);
-				console.log('send datas success');
+				console.log('respond orders success');
 				res.end();
 			}
 	});	
 };
 
+
 exports.addFood = function(req, res) {
+	console.log('start to add food');
 	console.log(req.body);
-	var resturant_id = req.body.rastaurant_id;
+	var restaurant_id = req.body.restaurant_id;
 	var food_name = req.body.food_name;
 	var food_type = req.body.food_type;
 	var food_price = req.body.food_price;
@@ -105,7 +144,7 @@ exports.addFood = function(req, res) {
 	var picture_url = "/static/foods/images/" + req.body.picture_url;
 
 	var food = new Food();
-		food.set('resturant_id', resturant_id);
+		food.set('restaurant_id', restaurant_id);
 		food.set('food_name', food_name);
 		food.set('food_type', food_type);
 		food.set('food_price', food_price);
@@ -118,9 +157,9 @@ exports.addFood = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log("ok");
+				console.log("add food success!");
 				var data = {
-					resturant_id: resturant_id,
+					restaurant_id: restaurant_id,
 					food_name: food_name,
 					food_type: food_type,
 					food_price: food_price,
@@ -134,14 +173,15 @@ exports.addFood = function(req, res) {
 };
 
 exports.deleteFood = function(req, res) {
+	console.log('start to delete food');
 	console.log(req.body);
-	var resturant_id = req.body.resturant_id;
+	var restaurant_id = req.body.restaurant_id;
 	var food_name = req.body.food_name;
-	Food.remove({resturant_id: resturant_id, food_name: food_name}, function(err, docs) {
+	Food.remove({restaurant_id: restaurant_id, food_name: food_name}, function(err, docs) {
 		if (err) {
 			console.log(err);
 		} else {
-			console.log('delete success');
+			console.log('delete success!');
 		}
 	})
 };

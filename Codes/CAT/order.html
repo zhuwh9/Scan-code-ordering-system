@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>食品安全档案</title>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/index.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/CAT.css" type="text/css" rel="stylesheet" />
+		
+		<style>
+			#mui-scroll-column3 {
+				position: absolute;
+				top: 50px;
+				left: 20px;
+				height: 250px;
+				width: 300px;
+				float: right;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<h3><b>CAT美味餐饮</b></h3>
+		<div id="mui-scroll-column3" class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+				<div class="js-mui-control-item3" style="height: 130px;"></div>
+			</div>
+			<div>
+				<p class="order_total_money"></p>
+				<p class="order_total_num"></p>
+			</div>
+		</div>
+		
+		
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			(function($) {
+				$('#mui-scroll-column1').scroll({
+					indicators: true //是否显示滚动条
+
+				});
+				$('#mui-scroll-column2').scroll({
+					indicators: true //是否显示滚动条
+				});
+
+			})(mui);
+		</script>
+	</body>
+
+</html>
+<!--
+	/*
+	(function($) { 
+    // the code of this function is from 
+    // http://lucassmith.name/pub/typeof.html 
+    $.type = function(o) { 
+        var _toS = Object.prototype.toString; 
+        var _types = { 
+            'undefined': 'undefined', 
+            'number': 'number', 
+            'boolean': 'boolean', 
+            'string': 'string', 
+            '[object Function]': 'function', 
+            '[object RegExp]': 'regexp', 
+            '[object Array]': 'array', 
+            '[object Date]': 'date', 
+            '[object Error]': 'error' 
+        }; 
+ 
+        return _types[typeof o] || _types[_toS.call(o)] || (o ? 'object' : 'null'); 
+    }; 
+ 
+    // the code of these two functions is from mootools 
+    // http://mootools.net 
+    var $specialChars = { '\b': '\\b', '\t': '\\t', '\n': '\\n', '\f': '\\f', '\r': '\\r', '"': '\\"', '\\': '\\\\' }; 
+    var $replaceChars = function(chr) { 
+        return $specialChars[chr] || '\\u00' + Math.floor(chr.charCodeAt() / 16).toString(16) + (chr.charCodeAt() % 16).toString(16); 
+    }; 
+ 
+    $.toJSON = function(o) { 
+        var s = []; 
+        switch ($.type(o)) { 
+            case 'undefined': 
+                return 'undefined'; 
+                break; 
+            case 'null': 
+                return 'null'; 
+                break; 
+            case 'number': 
+            case 'boolean': 
+            case 'date': 
+            case 'function': 
+                return o.toString(); 
+                break; 
+            case 'string': 
+                return '"' + o.replace(/[\x00-\x1f\\"]/g, $replaceChars) + '"'; 
+                break; 
+            case 'array': 
+                for (var i = 0, l = o.length; i < l; i++) { 
+                    s.push($.toJSON(o[i])); 
+                } 
+                return '[' + s.join(',') + ']'; 
+                break; 
+            case 'error': 
+            case 'object': 
+                for (var p in o) { 
+                    s.push(p + ':' + $.toJSON(o[p])); 
+                } 
+                return '{' + s.join(',') + '}'; 
+                break; 
+            default: 
+                return ''; 
+                break; 
+        } 
+    }; 
+ 
+    $.evalJSON = function(s) { 
+        if ($.type(s) != 'string' || !s.length) return null; 
+        return eval('(' + s + ')'); 
+    }; 
+})(jQuery);
+*/
+-->

@@ -10,8 +10,9 @@ function hashPW(password) {
 }
 
 exports.getOrder = function(req, res) {
-	var resturant_id = req.body.resturant_id;
-	Order.find({resturant_id: req.query.restaurant_id})
+	console.log(req.body);
+	var restaurant_id = req.body.restaurant_id;
+	Order.find({restaurant_id: req.query.restaurant_id})
 	.exec(function(err, orders) {
 		console.log(orders.length);
 			if(err) {
@@ -25,7 +26,7 @@ exports.getOrder = function(req, res) {
 					console.log(order);
 					var data = {
 						order_num: orders[order].order_num,
-						resturant_id: orders[order].resturant_id,
+						restaurant_id: orders[order].restaurant_id,
 						table_num: orders[order].table_num,
 						order_time: orders[order].order_time,
 						menu: orders[order].menu,
@@ -41,10 +42,12 @@ exports.getOrder = function(req, res) {
 }
 
 exports.generateOrder = function(req, res) {
-	var resturant_id = req.body.resturant_id;
+	console.log('start to generate order');
+	console.log(req.body);
+	var restaurant_id = req.body.restaurant_id;
 	var table_num = req.body.table_num;
 	var order_time = req.body.order_time;
-	var order_num = hashPW(resturant_id + table_num + order_time);
+	var order_num = hashPW(restaurant_id + table_num + order_time);
 	var menu = req.body.menu;
 	var total_num = req.body.total_num;
 	var total_price = req.body.total_price;
@@ -54,6 +57,7 @@ exports.generateOrder = function(req, res) {
 
 	//add order to db
 	var order = new Order({order_num: order_num});
+		order.set('restaurant_id', restaurant_id);
 		order.set('table_num', table_num);
 		order.set('order_time', orderTime.getTime());
 		order.set('menu', JSON.stringify(menu));
@@ -66,7 +70,7 @@ exports.generateOrder = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log("success");
+				console.log("generated order success");
 				//req.session.msg = 'success';
 				var data = {
 					order_num: order_num,

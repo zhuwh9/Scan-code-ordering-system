@@ -1,101 +1,157 @@
 var http = require('http');
-var jQuery = require('jquery');
-
-//	to add food
-// var data = JSON.stringify({
-// 	restaurant_id: '18819253726',
-// 	food_name: 'chicken',
-// 	food_type: 'meat',
-// 	food_price: '$100',
-// 	food_description: 'a delicious chicken meat',
-// 	picture_url: 'chicken'
-// });
-// var options = {
-// 	//host: '192.168.59.159',//this is for WWW
-// 	host: '127.0.0.1',
-// 	path: '/addFood',
-// 	port: '5000',
-// 	method: 'POST',
-// 	headers: {
-// 		'Content-Type':'application/json;charset=UTF-8',
-// 		'Content-Length':data.length
-// 	}
-// };
-// var req = http.request(options, function(response){
-// 	var responsedata = '';
-// 	response.on('data', function(chunk){
-// 		responsedata += chunk;
-// 	});
-// 	response.on('end', function(){
-// 		responsedata = JSON.parse(responsedata);
-// 		console.log(responsedata);
-// 	});
-// });
-// req.on('error', function(e) {
-// 	console.log('Error is : ' + e.message);
-// });
-// req.write(data);
-// req.end();
-//	to get food list
-// 	var data = JSON.stringify({
-// 	restaurant_id: '18819253726'
-// });
-
-//	to delete food
-// 	var data = JSON.stringify({
-// 	restaurant_id: '18819253726',
-// 	food_name: 'chicken'
-// });
+//var jQuery = require('jquery');
 
 
-// to get the menu
-// var options = {
-// 	//host: '192.168.59.159',//this is for WWW
-// 	host: '127.0.0.1',
-// 	path: '/menu?restaurant_id=18819253726',
-// 	port: '5000',
-// 	method: 'GET'
-// };
-
-// var req = http.request(options, function(response){
-// 	var responsedata = '';
-// 	response.on('fooddata', function(chunk){
-// 		responsedata += chunk;
-// 	});
-// 	response.on('end', function(){
-// 		responsedata = JSON.parse(responsedata);
-// 		console.log(responsedata);
-// 	});
-// });
-// req.on('error', function(e) {
-// 	console.log('Error is : ' + e.message);
-// });
-// req.end();
-
-//	to take a order
-var time = new Date().getTime();
+/**********************************************
+		descrition  : customer to take a order
+		method		: POST
+ 		path		: /order
+ *********************************************/
+var time = new Date();
 var data = JSON.stringify({
-	restaurant_id: '18819253726',
+	restaurant_id: '123456',
 	table_num: '1',
 	order_time: time,
 	menu: [
-		{'menu_name':encodeURI('螺蛳粉','utf-8'),'price':'13','num':'2'},
+		{'menu_name':encodeURI('螺蛳粉'),'price':'13','num':'2'},
 		{'menu_name':encodeURI('过桥米线','utf-8'),'price':'11','num':'1'}
-	],/*'chicken',*/
-	total_num: '2',
+	],
+	total_num: '3',
 	total_price: '$30'
  });
+
 var options = {
-	//host: '192.168.59.159',//this is for WWW
-	host: '127.0.0.1',
+	host: '39.104.73.169',
 	path: '/order',
-	port: '5000',
+	port: '80',
 	method: 'POST',
 	headers: {
         'Content-Type':'application/json;charset=UTF-8',
         'Content-Length':data.length
     }
 };
+
+
+
+/**********************************************
+		descrition  : restaurant to get food list
+		method		: POST
+ 		path		: /restaurant
+ *********************************************/
+// var data = JSON.stringify({
+// 	restaurant_id: '123456'
+// });
+
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/restaurant',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
+
+
+
+/**********************************************
+		descrition  : restaurant to add food
+		method		: POST
+ 		path		: /addFood
+ *********************************************/
+// var data = JSON.stringify({
+// 	restaurant_id: '123456',
+// 	food_name: 'pork',
+// 	food_type: 'meat',
+// 	food_price: '$200',
+// 	food_description: 'a delicious pork meat',
+// 	picture_url: 'pork'
+// });
+
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/addFood',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
+
+
+
+
+/**********************************************
+		descrition  : restaurant to delete food
+		method		: POST
+ 		path		: /deleteFood
+ *********************************************/
+// 	var data = JSON.stringify({
+// 	restaurant_id: '123456',
+// 	food_name: 'chicken'
+// });
+
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/deleteFood',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
+
+
+
+
+/**********************************************
+		descrition  : restaurant to get alls orders
+		method		: POST
+ 		path		: /receiveAllOrders
+*********************************************/
+// var data = JSON.stringify({
+// 	restaurant_id: '123456'
+//  });
+
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/receiveAllOrders',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
+
+
+
+
+/**********************************************
+		descrition  : restaurant to get orders every 10s
+		method		: POST
+ 		path		: /receiveOrders
+ *********************************************/
+// var time = new Date();
+// var data = JSON.stringify({
+// 	restaurant_id: '123456',
+// 	order_time: time
+//  });
+
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/receiveOrders',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
+
 
 var req = http.request(options, function(response){
 	var responsedata = '';
@@ -107,34 +163,5 @@ var req = http.request(options, function(response){
 		console.log(responsedata);
 	});
 });
-
-req.on('error', function(e) {
-	console.log('Error is : ' + e.message);
-});
-
 req.write(data);
-req.end();
-
-// to get all orders
-var options = {
-	//host: '192.168.59.159',//this is for WWW
-	host: '127.0.0.1',
-	path: '/order?restaurant_id=18819253726',
-	port: '5000',
-	method: 'GET'
-};
-
-var req = http.request(options, function(response){
-	var responsedata = '';
-	response.on('fooddata', function(chunk){
-		responsedata += chunk;
-	});
-	response.on('end', function(){
-		responsedata = JSON.parse(responsedata);
-		console.log(responsedata);
-	});
-});
-req.on('error', function(e) {
-	console.log('Error is : ' + e.message);
-});
 req.end();

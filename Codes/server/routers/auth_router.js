@@ -9,9 +9,9 @@ module.exports = function(app) {
 	
 
 
-	/*
-	**************user's behaviors******************************************
-	*/
+	/**************************************************************************
+								user's behaviors
+	***************************************************************************/
 
 	//render home page
 	app.get('/', function(req, res) {
@@ -20,23 +20,24 @@ module.exports = function(app) {
 	});
 
 	//render food lists
-	app.get('/restaurant',  restaurant.getRestaurantData);
+	app.post('/restaurant',  restaurant.getRestaurantData);
 
 	//get order datas from coutomer and generate order
 	app.post('/order', system.generateOrder);
 
-	app.get('/menu', restaurant.getMenuData);
+	app.post('/menu', restaurant.getMenuData);
 
-	app.get('/getOrder', system.getOrder);
-	
-	//end user's behavior
-	/*********************************************************************/
+	app.post('/getOrder', system.getOrder);
+	/**************************************************************************
+								end user's behaviors
+	***************************************************************************/
 
 
 
-	/*
-	**************restaurant's behaviors******************************************
-	*/
+
+	/**************************************************************************
+								restaurant's behaviors
+	***************************************************************************/
 	app.get('/merchantRegister', function(req, res) {
 		console.log('render register page!');
 	});
@@ -57,11 +58,11 @@ module.exports = function(app) {
 
 	app.post('/deleteFood', restaurant.deleteFood);
 
-	app.post('/receiveOrder', restaurant.receiveOrder);
-	app.get('/receiveOrder', restaurant.receiveOrder);
+	app.post('/receiveOrders', restaurant.receiveOrders);
+	app.post('/receiveAllOrders', restaurant.receiveAllOrders);
 
-	/*
-	**************end restaurant's behaviors**************************************
-	*/
+	/**************************************************************************
+							end restaurant's behaviors
+	***************************************************************************/
 
 }
