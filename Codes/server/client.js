@@ -60,25 +60,25 @@ var http = require('http');
 		method		: POST
  		path		: /addFood
  *********************************************/
-var data = JSON.stringify({
-	restaurant_id: '123456',
-	food_name: 'pork',
-	food_type: 'meat',
-	food_price: '$200',
-	food_description: 'a delicious pork meat',
-	picture_url: 'pork'
-});
+// var data = JSON.stringify({
+// 	restaurant_id: '123456',
+// 	food_name: 'pork',
+// 	food_type: 'meat',
+// 	food_price: '$200',
+// 	food_description: 'a delicious pork meat',
+// 	picture_url: 'pork'
+// });
 
-var options = {
-	host: '39.104.73.169',
-	path: '/addFood',
-	port: '80',
-	method: 'POST',
-	headers: {
-        'Content-Type':'application/json;charset=UTF-8',
-        'Content-Length':data.length
-    }
-};
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/addFood',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
 
 
 
@@ -110,22 +110,22 @@ var options = {
 /**********************************************
 		descrition  : restaurant to get alls orders
 		method		: POST
- 		path		: /receiveAllOrder
+ 		path		: /receiveAllOrders
 *********************************************/
-// var data = JSON.stringify({
-// 	restaurant_id: '123456'
-//  });
+var data = JSON.stringify({
+	restaurant_id: '123456'
+ });
 
-// var options = {
-// 	host: '39.104.73.169',
-// 	path: '/receiveAllOrder',
-// 	port: '80',
-// 	method: 'POST',
-// 	headers: {
-//         'Content-Type':'application/json;charset=UTF-8',
-//         'Content-Length':data.length
-//     }
-// };
+var options = {
+	host: '39.104.73.169',
+	path: '/receiveAllOrders',
+	port: '80',
+	method: 'POST',
+	headers: {
+        'Content-Type':'application/json;charset=UTF-8',
+        'Content-Length':data.length
+    }
+};
 
 
 
@@ -133,7 +133,7 @@ var options = {
 /**********************************************
 		descrition  : restaurant to get orders every 10s
 		method		: POST
- 		path		: /receiveOrder
+ 		path		: /receiveOrders
  *********************************************/
 // var time = new Date();
 // var data = JSON.stringify({
@@ -143,7 +143,7 @@ var options = {
 
 // var options = {
 // 	host: '39.104.73.169',
-// 	path: '/receiveOrder',
+// 	path: '/receiveOrders',
 // 	port: '80',
 // 	method: 'POST',
 // 	headers: {
