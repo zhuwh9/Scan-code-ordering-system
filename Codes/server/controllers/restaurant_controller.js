@@ -136,7 +136,7 @@ exports.receiveOrders = function(req, res) {
 exports.addFood = function(req, res) {
 	console.log('start to add food');
 	console.log(req.body);
-	var resturant_id = req.body.rastaurant_id;
+	var restaurant_id = req.body.restaurant_id;
 	var food_name = req.body.food_name;
 	var food_type = req.body.food_type;
 	var food_price = req.body.food_price;
@@ -144,7 +144,7 @@ exports.addFood = function(req, res) {
 	var picture_url = "/static/foods/images/" + req.body.picture_url;
 
 	var food = new Food();
-		food.set('resturant_id', resturant_id);
+		food.set('restaurant_id', restaurant_id);
 		food.set('food_name', food_name);
 		food.set('food_type', food_type);
 		food.set('food_price', food_price);
@@ -159,7 +159,7 @@ exports.addFood = function(req, res) {
 			} else {
 				console.log("add food success!");
 				var data = {
-					resturant_id: resturant_id,
+					restaurant_id: restaurant_id,
 					food_name: food_name,
 					food_type: food_type,
 					food_price: food_price,
@@ -175,9 +175,9 @@ exports.addFood = function(req, res) {
 exports.deleteFood = function(req, res) {
 	console.log('start to delete food');
 	console.log(req.body);
-	var resturant_id = req.body.resturant_id;
+	var restaurant_id = req.body.restaurant_id;
 	var food_name = req.body.food_name;
-	Food.remove({resturant_id: resturant_id, food_name: food_name}, function(err, docs) {
+	Food.remove({restaurant_id: restaurant_id, food_name: food_name}, function(err, docs) {
 		if (err) {
 			console.log(err);
 		} else {
