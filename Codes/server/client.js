@@ -13,17 +13,17 @@ var data = JSON.stringify({
 	table_num: '1',
 	order_time: time,
 	menu: [
-		{'menu_name':encodeURI('螺蛳粉','utf-8'),'price':'13','num':'2'},
-		{'menu_name':encodeURI('过桥米线','utf-8'),'price':'11','num':'1'}
+		{'menu_name':encodeURI('luo_shi_fen','utf-8'),'price':'13','num':'2'},
+		{'menu_name':encodeURI('guo_qiao_mi_xian','utf-8'),'price':'11','num':'1'}
 	],
-	total_num: '2',
+	total_num: '3',
 	total_price: '$30'
  });
 
 var options = {
-	host: '192.168.43.233',
+	host: '39.104.73.169',
 	path: '/order',
-	port: '5000',
+	port: '80',
 	method: 'POST',
 	headers: {
         'Content-Type':'application/json;charset=UTF-8',
@@ -34,23 +34,45 @@ var options = {
 
 
 /**********************************************
+		descrition  : restaurant to get food list
+		method		: POST
+ 		path		: /restaurant
+ *********************************************/
+// var data = JSON.stringify({
+// 	restaurant_id: '123456'
+// });
+
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/restaurant',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
+
+
+
+/**********************************************
 		descrition  : restaurant to add food
 		method		: POST
  		path		: /addFood
  *********************************************/
 // var data = JSON.stringify({
 // 	restaurant_id: '123456',
-// 	food_name: 'chicken',
+// 	food_name: 'pork',
 // 	food_type: 'meat',
-// 	food_price: '$100',
-// 	food_description: 'a delicious chicken meat',
-// 	picture_url: 'chicken'
+// 	food_price: '$200',
+// 	food_description: 'a delicious pork meat',
+// 	picture_url: 'pork'
 // });
 
 // var options = {
-// 	host: '192.168.43.233',
+// 	host: '39.104.73.169',
 // 	path: '/addFood',
-// 	port: '5000',
+// 	port: '80',
 // 	method: 'POST',
 // 	headers: {
 //         'Content-Type':'application/json;charset=UTF-8',
@@ -72,9 +94,9 @@ var options = {
 // });
 
 // var options = {
-// 	host: '192.168.59.160',
+// 	host: '39.104.73.169',
 // 	path: '/deleteFood',
-// 	port: '5000',
+// 	port: '80',
 // 	method: 'POST',
 // 	headers: {
 //         'Content-Type':'application/json;charset=UTF-8',
@@ -95,9 +117,9 @@ var options = {
 //  });
 
 // var options = {
-// 	host: '192.168.59.160',
+// 	host: '39.104.73.169',
 // 	path: '/receiveAllOrder',
-// 	port: '5000',
+// 	port: '80',
 // 	method: 'POST',
 // 	headers: {
 //         'Content-Type':'application/json;charset=UTF-8',
@@ -120,9 +142,9 @@ var options = {
 //  });
 
 // var options = {
-// 	host: '192.168.59.160',
+// 	host: '39.104.73.169',
 // 	path: '/receiveOrder',
-// 	port: '5000',
+// 	port: '80',
 // 	method: 'POST',
 // 	headers: {
 //         'Content-Type':'application/json;charset=UTF-8',
