@@ -7,29 +7,29 @@ var http = require('http');
 		method		: POST
  		path		: /order
  *********************************************/
-// var time = new Date();
-// var data = JSON.stringify({
-// 	restaurant_id: '123456',
-// 	table_num: '1',
-// 	order_time: time,
-// 	menu: [
-// 		{'menu_name':encodeURI('螺蛳粉'),'price':'13','num':'2'},
-// 		{'menu_name':encodeURI('过桥米线','utf-8'),'price':'11','num':'1'}
-// 	],
-// 	total_num: '3',
-// 	total_price: '$30'
-//  });
+var time = new Date();
+var data = JSON.stringify({
+	restaurant_id: '123456',
+	table_num: '1',
+	order_time: time,
+	menu: [
+		{'menu_name':encodeURI('螺蛳粉'),'price':'13','num':'2'},
+		{'menu_name':encodeURI('过桥米线','utf-8'),'price':'11','num':'1'}
+	],
+	total_num: '3',
+	total_price: '$30'
+ });
 
-// var options = {
-// 	host: '39.104.73.169',
-// 	path: '/order',
-// 	port: '80',
-// 	method: 'POST',
-// 	headers: {
-//         'Content-Type':'application/json;charset=UTF-8',
-//         'Content-Length':data.length
-//     }
-// };
+var options = {
+	host: '39.104.73.169',
+	path: '/order',
+	port: '80',
+	method: 'POST',
+	headers: {
+        'Content-Type':'application/json;charset=UTF-8',
+        'Content-Length':data.length
+    }
+};
 
 
 
@@ -112,20 +112,20 @@ var http = require('http');
 		method		: POST
  		path		: /receiveAllOrders
 *********************************************/
-var data = JSON.stringify({
-	restaurant_id: '123456'
- });
+// var data = JSON.stringify({
+// 	restaurant_id: '123456'
+//  });
 
-var options = {
-	host: '39.104.73.169',
-	path: '/receiveAllOrders',
-	port: '80',
-	method: 'POST',
-	headers: {
-        'Content-Type':'application/json;charset=UTF-8',
-        'Content-Length':data.length
-    }
-};
+// var options = {
+// 	host: '39.104.73.169',
+// 	path: '/receiveAllOrders',
+// 	port: '80',
+// 	method: 'POST',
+// 	headers: {
+//         'Content-Type':'application/json;charset=UTF-8',
+//         'Content-Length':data.length
+//     }
+// };
 
 
 
