@@ -4,34 +4,6 @@ var Food = mongoose.model('Food');
 var Order = mongoose.model('Order');
 var bodyParser = require('body-parser');
 
-exports.getMenuData = function(req, res) {
-	console.log(req.query.restaurant_id);
-	Food.find({restaurant_id: req.body.restaurant_id})
-	.exec(function(err, foods) {
-		console.log(foods.length);
-			if(err) {
-				console.log(err);
-				res.status(404);
-				res.end();
-			} else {
-				console.log('ok');
-				var fooddata = {data: []};
-				for (food in foods) {
-					console.log(food);
-					var data = {
-						food_name: foods[food].food_name,
-						food_type: foods[food].food_type,
-						food_price: foods[food].food_price,
-						food_description: foods[food].food_description,
-						picture_url: foods[food].picture_url
-					}
-					fooddata.data.push(data);
-				}
-				res.status(200).json(fooddata);
-				res.end();
-			}
-	});
-}
 
 exports.getRestaurantData = function(req, res) {
 	console.log('start to get restaurant datas');

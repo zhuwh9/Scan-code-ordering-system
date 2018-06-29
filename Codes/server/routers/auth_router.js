@@ -27,7 +27,6 @@ module.exports = function(app) {
 
 	app.post('/menu', restaurant.getMenuData);
 
-	app.post('/getOrder', system.getOrder);
 	/**************************************************************************
 								end user's behaviors
 	***************************************************************************/
