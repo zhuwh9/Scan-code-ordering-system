@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 exports.getMenuData = function(req, res) {
 	console.log(req.query.restaurant_id);
-	Food.find({restaurant_id: req.query.restaurant_id})
+	Food.find({restaurant_id: req.body.restaurant_id})
 	.exec(function(err, foods) {
 		console.log(foods.length);
 			if(err) {
@@ -56,6 +56,7 @@ exports.getRestaurantData = function(req, res) {
 						picture_url: foods[food].picture_url
 					}
 					fooddata.data.push(data);
+					console.log('respond all foods success');
 				}
 				res.status(200).json(fooddata);
 				res.end();
@@ -66,10 +67,8 @@ exports.getRestaurantData = function(req, res) {
 exports.receiveAllOrders = function(req, res) {
 	console.log('start to send orders of restaurant');
 	console.log(req.body);
-	var time = req.query.time;
-	var requestTime = new Date(time).getTime();
 	
-	Order.find({restaurant_id:req.query.restaurant_id})
+	Order.find({restaurant_id:req.body.restaurant_id})
 	.exec(function(err, orders) {
 		console.log(orders.length);
 			if(err) {
@@ -101,10 +100,10 @@ exports.receiveAllOrders = function(req, res) {
 exports.receiveOrders = function(req, res) {
 	console.log('start to send orders of restaurant');
 	console.log(req.body);
-	var time = req.query.time;
+	var time = req.body.time;
 	var requestTime = new Date(time).getTime();
 	
-	Order.find({order_time:{"$gte":(requestTime - 10000)}, restaurant_id:req.query.restaurant_id})
+	Order.find({order_time:{"$gte":(requestTime - 10000)}, restaurant_id:req.body.restaurant_id})
 	.exec(function(err, Orders) {
 		console.log(Orders.length);
 			if(err) {
