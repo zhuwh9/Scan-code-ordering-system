@@ -25,8 +25,6 @@ module.exports = function(app) {
 	//get order datas from coutomer and generate order
 	app.post('/order', system.generateOrder);
 
-	app.post('/menu', restaurant.getMenuData);
-
 	/**************************************************************************
 								end user's behaviors
 	***************************************************************************/
