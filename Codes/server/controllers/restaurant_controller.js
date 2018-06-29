@@ -36,7 +36,7 @@ exports.getMenuData = function(req, res) {
 exports.getRestaurantData = function(req, res) {
 	console.log('start to get restaurant datas');
 	console.log(req.body);
-	Food.find({restaurant_id: req.query.restaurant_id})
+	Food.find({restaurant_id: req.body.restaurant_id})
 	.exec(function(err, foods) {
 		console.log(foods.length);
 			if(err) {

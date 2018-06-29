@@ -33,6 +33,6 @@ app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
 
 require('./routers/auth_router')(app);
-app.listen(5000);
+app.listen(80);
 
-console.log("the web-server is running on port 5000");
+console.log("the web-server is running on port 80");

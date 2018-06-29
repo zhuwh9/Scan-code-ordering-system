@@ -20,14 +20,14 @@ module.exports = function(app) {
 	});
 
 	//render food lists
-	app.get('/restaurant',  restaurant.getRestaurantData);
+	app.post('/restaurant',  restaurant.getRestaurantData);
 
 	//get order datas from coutomer and generate order
 	app.post('/order', system.generateOrder);
 
-	app.get('/menu', restaurant.getMenuData);
+	app.post('/menu', restaurant.getMenuData);
 
-	app.get('/getOrder', system.getOrder);
+	app.post('/getOrder', system.getOrder);
 	/**************************************************************************
 								end user's behaviors
 	***************************************************************************/
