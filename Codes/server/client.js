@@ -13,8 +13,8 @@ var data = JSON.stringify({
 	table_num: '1',
 	order_time: time,
 	menu: [
-		{'menu_name':encodeURI('luo_shi_fen','utf-8'),'price':'13','num':'2'},
-		{'menu_name':encodeURI('guo_qiao_mi_xian','utf-8'),'price':'11','num':'1'}
+		{'menu_name':encodeURI('螺蛳粉'),'price':'13','num':'2'},
+		{'menu_name':encodeURI('过桥米线','utf-8'),'price':'11','num':'1'}
 	],
 	total_num: '3',
 	total_price: '$30'
