@@ -42,12 +42,12 @@ exports.receiveAllOrders = function(req, res) {
 	
 	Order.find({restaurant_id:req.body.restaurant_id})
 	.exec(function(err, orders) {
-		console.log(orders.length);
 			if(err) {
 				console.log(err);
 				res.status(404);
 				res.end();
 			} else {
+				console.log(orders.length);
 				var orderdata = {data: []};
 				for (order in orders) {
 					var data = {
@@ -76,8 +76,7 @@ exports.receiveOrders = function(req, res) {
 	var requestTime = new Date(time).getTime();
 	
 	Order.find({order_time:{"$gte":(requestTime - 10000)}, restaurant_id:req.body.restaurant_id})
-	.exec(function(err, Orders) {
-		console.log(Orders.length);
+	.exec(function(err, orders) {
 			if(err) {
 				console.log(err);
 				res.status(404);
