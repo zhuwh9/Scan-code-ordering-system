@@ -11,7 +11,7 @@ function hashPW(password) {
 
 
 exports.generateOrder = function(req, res) {
-	console.log('start to generate order');
+	console.log('received a build-order require from customer');
 	console.log(req.body);
 	var restaurant_id = req.body.restaurant_id;
 	var table_num = req.body.table_num;
@@ -39,7 +39,6 @@ exports.generateOrder = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log("generated order success");
 				//req.session.msg = 'success';
 				var data = {
 					order_num: order_num,
@@ -50,6 +49,7 @@ exports.generateOrder = function(req, res) {
 					total_price: total_price
 				};
 				res.status(200).json(data);
+				console.log("generated order success");
 				res.end();
 			}
 		});

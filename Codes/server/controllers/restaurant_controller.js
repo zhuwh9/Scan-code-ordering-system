@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 
 exports.getRestaurantData = function(req, res) {
-	console.log('start to get restaurant datas');
+	console.log('received a foods require from customer');
 	console.log(req.body);
 	Food.find({restaurant_id: req.body.restaurant_id})
 	.exec(function(err, foods) {
@@ -28,16 +28,16 @@ exports.getRestaurantData = function(req, res) {
 						picture_url: foods[food].picture_url
 					}
 					fooddata.data.push(data);
-					console.log('respond all foods success');
 				}
 				res.status(200).json(fooddata);
+				console.log('respond foods success');
 				res.end();
 			}
 	});	
 }
 
 exports.receiveAllOrders = function(req, res) {
-	console.log('start to send orders of restaurant');
+	console.log('received a orders require from restaurant');
 	console.log(req.body);
 	
 	Order.find({restaurant_id:req.body.restaurant_id})
@@ -70,7 +70,7 @@ exports.receiveAllOrders = function(req, res) {
 
 
 exports.receiveOrders = function(req, res) {
-	console.log('start to send orders of restaurant');
+	console.log('received a orders require(every 10s) from restaurant');
 	console.log(req.body);
 	var time = req.body.time;
 	var requestTime = new Date(time).getTime();
@@ -105,7 +105,7 @@ exports.receiveOrders = function(req, res) {
 
 
 exports.addFood = function(req, res) {
-	console.log('start to add food');
+	console.log('received add-food require from restaurant');
 	console.log(req.body);
 	var restaurant_id = req.body.restaurant_id;
 	var food_name = req.body.food_name;
@@ -140,7 +140,6 @@ exports.addFood = function(req, res) {
 							res.status(404);
 							res.end();
 						} else {
-							console.log("add food success!");
 							var data = {
 								restaurant_id: restaurant_id,
 								food_name: food_name,
@@ -150,6 +149,7 @@ exports.addFood = function(req, res) {
 								picture_url: picture_url
 							}
 							res.status(200).json(data);
+							console.log("add food success!");
 							res.end();
 						}
 					});
@@ -163,7 +163,7 @@ exports.addFood = function(req, res) {
 };
 
 exports.deleteFood = function(req, res) {
-	console.log('start to delete food');
+	console.log('received delete-food require from restaurant');
 	console.log(req.body);
 	var restaurant_id = req.body.restaurant_id;
 	var food_name = req.body.food_name;
