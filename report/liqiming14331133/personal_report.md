@@ -20,13 +20,13 @@ apt-get install npm -y
 
 ## 进行后端开发
 创建项目目录，在目录下进行开发
-![](images/project_directory.png)
 - node_modules目录存放第三方包的数据（透过npm下载的包会自动存到该目录下）
 - models目录存放数据库格式文件，定义储存的数据格式
 - routers目录存放路由文件，进行url路由
 - controllers目录存放操作文件，对应于每个url进行操作
 - view存放静态的html文件
 - static存放对于html下的css及js文件
+![](images/project_directory.png)
 ### 利用npm进行模块下载
 - 在开发目录下利用npm，下载开发所用到的api
 - 下载express api
