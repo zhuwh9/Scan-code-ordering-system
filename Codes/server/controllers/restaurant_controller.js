@@ -115,31 +115,50 @@ exports.addFood = function(req, res) {
 	var food_description = req.body.food_description;
 	var picture_url = "/static/foods/images/" + req.body.picture_url;
 
-	var food = new Food();
-		food.set('restaurant_id', restaurant_id);
-		food.set('food_name', food_name);
-		food.set('food_type', food_type);
-		food.set('food_price', food_price);
-		food.set('food_description', food_description);
-		food.set('picture_url', picture_url);
-		food.save(function(err) {
-			if(err) {
+	/*
+	* check if repeated, if not then add it to database
+	*/
+
+	Food.find({restaurant_id : restaurant_id, food_name : food_name})
+		.exec(function(err, foods) {
+			if (err) {
 				console.log(err);
-				//req.session.error = 'error';
 				res.status(404);
 				res.end();
 			} else {
-				console.log("add food success!");
-				var data = {
-					restaurant_id: restaurant_id,
-					food_name: food_name,
-					food_type: food_type,
-					food_price: food_price,
-					food_description: food_description,
-					picture_url: picture_url
+				if (foods.length == 0) {
+					var food = new Food();
+					food.set('restaurant_id', restaurant_id);
+					food.set('food_name', food_name);
+					food.set('food_type', food_type);
+					food.set('food_price', food_price);
+					food.set('food_description', food_description);
+					food.set('picture_url', picture_url);
+					food.save(function(err) {
+						if(err) {
+							console.log(err);
+							//req.session.error = 'error';
+							res.status(404);
+							res.end();
+						} else {
+							console.log("add food success!");
+							var data = {
+								restaurant_id: restaurant_id,
+								food_name: food_name,
+								food_type: food_type,
+								food_price: food_price,
+								food_description: food_description,
+								picture_url: picture_url
+							}
+							res.status(200).json(data);
+							res.end();
+						}
+					});
+				} else {
+					res.status(404).json({message : 'food already added'});
+					res.end();
 				}
-				res.status(200).json(data);
-				res.end();
+				
 			}
 		});
 };
