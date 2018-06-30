@@ -25,7 +25,7 @@ apt-get install npm -y
 - routers目录存放路由文件，进行url路由
 - controllers目录存放操作文件，对应于每个url进行操作
 - view存放静态的html文件
-- static存放对于html下的css及js文件
+- static存放对于html下的css及js文件  
 ![](images/project_directory.png)
 ### 利用npm进行模块下载
 - 在开发目录下利用npm，下载开发所用到的api
