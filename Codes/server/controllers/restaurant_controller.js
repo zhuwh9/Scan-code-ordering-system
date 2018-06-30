@@ -15,7 +15,6 @@ exports.getRestaurantData = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log('there are ' + orders.length + 'foods datas');
 				var fooddata = {data: []};
 				for (food in foods) {
 					console.log(food);
@@ -46,7 +45,6 @@ exports.receiveAllOrders = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log('there are ' + orders.length + 'orders datas');
 				var orderdata = {data: []};
 				for (order in orders) {
 					var data = {
@@ -81,7 +79,6 @@ exports.receiveOrders = function(req, res) {
 				res.status(404);
 				res.end();
 			} else {
-				console.log('there are ' + orders.length + 'orders datas');
 				var orderdata = {data: []};
 				for (order in orders) {
 					var data = {
