@@ -73,9 +73,9 @@ exports.receiveOrders = function(req, res) {
 	console.log('received a orders require(every 10s) from restaurant');
 	console.log(req.body);
 	var order_time = req.body.order_time;
-	var requestTime = new Date(order_time).getTime();
+	var requestTime = new Date(order_time);
 	
-	Order.find({order_time:{"$gte":(requestTime - 10000)}, restaurant_id:req.body.restaurant_id})
+	Order.find({order_time:{"$gte":(requestTime.getTime() - 10000)}, restaurant_id:req.body.restaurant_id})
 	.exec(function(err, orders) {
 			if(err) {
 				console.log(err);
